@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.information,
-      required this.image})
-      : super(key: key);
+      required this.image});
 
   final String title;
   final String information;
@@ -14,7 +13,7 @@ class ListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 250,
       child: Card(
@@ -43,9 +42,9 @@ class ListCard extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 4), // Space between title and subtitle
+                    const SizedBox(height: 4), // Space between title and subtitle
                     Text(
                       information,
                       maxLines: 4,

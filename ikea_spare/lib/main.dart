@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
-import 'Widgets/ListCard.dart'; // Import your ItemCard
+// Import your ItemCard
 
 void main() {
   runApp(const MyApp());

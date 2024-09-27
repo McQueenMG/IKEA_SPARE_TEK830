@@ -50,6 +50,18 @@ class ListCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4), // Space between title and subtitle
                     Text(
+                      "ID: $id",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                    Text(
+                      "Quantity: $quantity",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                    Text(
                       description,
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,

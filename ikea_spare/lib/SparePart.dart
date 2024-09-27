@@ -6,4 +6,15 @@ class SparePart {
   int quantity = 0;
 
   SparePart(this.id, this.name, this.description, this.imageUrl, this.quantity);
+
+  String get getId => id;
+  String get getName => name;
+  String get getDescription => description;
+  String get getImageUrl => imageUrl;
+  int get getQuantity => quantity;
+
+  void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+  
 }

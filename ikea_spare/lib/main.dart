@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/SparePartList.dart';
+import 'Widgets/ListCard.dart'; // Import your ItemCard
 
 void main() {
   runApp(const MyApp());
@@ -78,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -106,29 +107,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
-            const Text("https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
             const Text("This is the spare part list of items"),
-            ElevatedButton(
-        onPressed: nextColor,
-        child: const Text('Show Flutter homepage'),
-      ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 300,
-                  height: 550,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    //addAutomaticKeepAlives: false,
-                    itemBuilder: (_, index) {
-                      return Container(
-                        color: nextColor(),
-                        width: 300,
-                        height: 75,
-                      );
-                    },
-                  ),
+                  width: 600,
+                  height: 585,
+                  child: SparePartGrid().getListWidget(),
                 ),
               ],
             ),
@@ -141,16 +127,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-
-  bool a = false;
-  Color nextColor() {
-    if (a) {
-      a = false;
-      return Colors.red;
-    }
-
-    a = true;
-    return Colors.black;
   }
 }

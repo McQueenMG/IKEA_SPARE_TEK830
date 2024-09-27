@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'ListCard.dart'; // Import your ItemCard
 
 void main() {
@@ -111,19 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 600,
-                  height: 550,
-                  child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return const ItemCard(
-                        title: 'Test',
-                        information:
-                            'TestInformation that should be pretty long so im just gonna keep writing to take up space within the item card in order to check its properties I will write forever and ever untill i give up on life like my boi Kermit did. IKEA better love this idea',
-                        image:
-                            'https://upload.wikimedia.org/wikipedia/en/6/62/Kermit_the_Frog.jpg',
-                      );
-                    },
-                  ),
+                  width: 500,
+                  height: 585,
+                  child: SparePartGrid().getListWidget(),
                 ),
               ],
             ),
@@ -136,16 +127,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-
-  bool a = false;
-  Color nextColor() {
-    if (a) {
-      a = false;
-      return Colors.red;
-    }
-
-    a = true;
-    return Colors.black;
   }
 }

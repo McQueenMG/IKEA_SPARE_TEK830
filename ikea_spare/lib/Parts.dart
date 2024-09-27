@@ -16,11 +16,17 @@ class Parts {
       partsList.add(part1); 
       partsList.add(part2);
 
-      //Map<String, SparePart> partsMap = HashMap(); 
-      //partsMap.addAll({part1.id: part1});
-      //partsMap.addAll({part2.id: part2});
+      /* Map<String, SparePart> partsMap = HashMap(); 
+      partsMap.addAll({part1.id: part1});
+      partsMap.addAll({part2.id: part2}); */
 
   return partsList;
 }
+
+/* static List<String> getIDs() {
+  List<String> ids = List.empty(growable: true);
+  getSpareParts().keys.forEach((part) => ids.add(part));
+  return ids;
+} */
 
 }

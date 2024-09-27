@@ -15,7 +15,7 @@ class Parts {
       "H191825",
       "Cap White",
       "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://us-tuna-sounds-images.voicemod.net/3ba22705-8a5a-4ff1-9f70-c291c63fabae-1659296288122.png",
+      "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
       16);
 
   SparePart _part3 = SparePart(

@@ -19,7 +19,7 @@ class ListCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 250,
+      height: 150,
       child: Card(
         color: Colors.lightBlue[50],
         child: Row(
@@ -63,7 +63,7 @@ class ListCard extends StatelessWidget {
                     ),
                     Text(
                       description,
-                      maxLines: 4,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
                     ),

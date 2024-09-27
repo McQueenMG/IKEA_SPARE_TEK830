@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ListCard.dart'; // Import your ItemCard
 
 void main() {
   runApp(const MyApp());
@@ -78,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -106,26 +106,21 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
-            const Text("https://www.youtube.com/watch?v=dQw4w9WgXcQ"),
             const Text("This is the spare part list of items"),
-            ElevatedButton(
-        onPressed: nextColor,
-        child: const Text('Show Flutter homepage'),
-      ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 300,
+                  width: 600,
                   height: 550,
                   child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    //addAutomaticKeepAlives: false,
-                    itemBuilder: (_, index) {
-                      return Container(
-                        color: nextColor(),
-                        width: 300,
-                        height: 75,
+                    itemBuilder: (context, index) {
+                      return const ItemCard(
+                        title: 'Test',
+                        information:
+                            'TestInformation that should be pretty long so im just gonna keep writing to take up space within the item card in order to check its properties I will write forever and ever untill i give up on life like my boi Kermit did. IKEA better love this idea',
+                        image:
+                            'https://upload.wikimedia.org/wikipedia/en/6/62/Kermit_the_Frog.jpg',
                       );
                     },
                   ),

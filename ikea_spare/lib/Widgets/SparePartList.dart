@@ -5,7 +5,12 @@ import 'package:ikea_spare/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class SparePartGrid {
-  List<SparePart> parts = Parts.getSpareParts();
+  late List<SparePart> parts;
+
+  SparePartGrid() {
+    Parts partsInstance = Parts();
+    parts = partsInstance.getSpareParts();
+  }
 
   ListView getListWidget() {
     return ListView.builder(

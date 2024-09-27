@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
-import 'ListCard.dart'; // Import your ItemCard
+import 'Widgets/ListCard.dart'; // Import your ItemCard
 
 void main() {
   runApp(const MyApp());
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 500,
+                  width: 600,
                   height: 585,
                   child: SparePartGrid().getListWidget(),
                 ),

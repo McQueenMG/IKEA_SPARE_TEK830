@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class SparePartGrid {
   bool a = false;
@@ -10,22 +11,14 @@ class SparePartGrid {
       itemBuilder: (_, index) {
         return Column(
           children: [
-            Container(
-              color: nextColor(),
-              width: double.infinity,
-              height: 100,
-              child: Text("Spare part $index",
-                  style: const TextStyle(color: Colors.white)),
+            ListCard(
+              title: "Spare Part $index",
+              information: "Description of Spare Part $index",
+              image: "https://media.tenor.com/wsbmWYxnJYQAAAAM/kermit-falling.gif",
             ),
-            const Divider(), // <- can be removed if not needed
           ],
         );
       },
     );
-  }
-
-  Color nextColor() {
-    a = !a;
-    return a ? Colors.red : Colors.black;
   }
 }

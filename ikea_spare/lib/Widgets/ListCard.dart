@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard(
-      {Key? key,
-      required this.title,
-      required this.information,
-      required this.image})
-      : super(key: key);
+      {super.key,
+      required this.id,
+      required this.name,
+      required this.description,
+      required this.imageUrl,
+      required this.quantity});
 
-  final String title;
-  final String information;
-  final String image;
+  final String id;
+  final String name;
+  final String description;
+  final String imageUrl;
+  final int quantity;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      height: 250,
+      height: 150,
       child: Card(
         color: Colors.lightBlue[50],
         child: Row(
@@ -26,7 +29,7 @@ class ListCard extends StatelessWidget {
               width: 150, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
               child: Image.network(
-                image,
+                imageUrl,
                 fit: BoxFit.cover, // Adjust to cover the container
               ),
             ),
@@ -39,16 +42,28 @@ class ListCard extends StatelessWidget {
                       CrossAxisAlignment.start, // Align text to the start
                   children: [
                     Text(
-                      title,
+                      name,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 4), // Space between title and subtitle
+                    const SizedBox(height: 4), // Space between title and subtitle
                     Text(
-                      information,
-                      maxLines: 4,
+                      "ID: $id",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                    Text(
+                      "Quantity: $quantity",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
+                    Text(
+                      description,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
                     ),

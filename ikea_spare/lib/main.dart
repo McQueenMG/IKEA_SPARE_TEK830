@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/ListCard.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 // Import your ItemCard
 
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
+        child: Row(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
@@ -107,10 +108,18 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
-            const Text("This is the spare part list of items"),
-            Row(
+            Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(
+                onPressed: _incrementCounter, 
+                tooltip: "yes",
+              ),
+            ],), 
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+              const Text("This is the spare part list of items"),
                 SizedBox(
                   width: 600,
                   height: 585,

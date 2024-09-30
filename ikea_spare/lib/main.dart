@@ -119,6 +119,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            Expanded(child:SizedBox(
+              height: 200,  
+              width: 600,
+              child:const Align(
+                alignment: Alignment.centerLeft,
+                child: Text("This is the scanned part"),
+              ),
+            ))
           ],
         ),
       ),

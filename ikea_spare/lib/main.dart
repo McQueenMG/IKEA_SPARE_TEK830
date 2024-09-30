@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 // Import your ItemCard
+import 'package:ikea_spare/Widgets/SearchBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+    String _searchText = '';
+
+  void _onSearchChanged(String searchText) {
+    setState(() {
+      _searchText = searchText;
+    });
+  }
   int _counter = 0;
 
   void _incrementCounter() {
@@ -107,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
+            CustomSearchBar(onSearch: _onSearchChanged),
             const Text("This is the spare part list of items"),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

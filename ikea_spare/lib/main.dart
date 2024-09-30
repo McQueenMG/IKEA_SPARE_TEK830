@@ -109,12 +109,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
-            Column(
+            const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ScannedPart(
-                title: "hej",
-                image: "https://prod.liveshare.vsengsaas.visualstudio.com/join?1C3F2886EA50E80A3F13B650424F2B801AA4"),
+              SizedBox(
+                width: 500,
+                height: 400,
+                child: ScannedPart(name: "lol", image: "lol", quantity: 1),
+              )
             ],), 
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

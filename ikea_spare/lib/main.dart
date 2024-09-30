@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   width: 600,
                   height: 585,
-                  child: SparePartGrid().getListWidget(),
+                  child: SparePartList().getListWidget(),
                 ),
               ],
             ),

@@ -21,11 +21,7 @@ class SparePartGrid {
         return Column(
           children: [
             ListCard(
-              id: parts[index].id,
-              name: parts[index].name,
-              description: parts[index].description,
-              imageUrl: parts[index].imageUrl,
-              quantity: parts[index].quantity,
+              part: parts[index],
             ),
           ],
         );

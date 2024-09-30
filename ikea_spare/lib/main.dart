@@ -112,10 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FloatingActionButton(
-                onPressed: _incrementCounter, 
-                tooltip: "yes",
-              ),
+              ScannedPart(
+                title: "hej",
+                image: "https://prod.liveshare.vsengsaas.visualstudio.com/join?1C3F2886EA50E80A3F13B650424F2B801AA4"),
             ],), 
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

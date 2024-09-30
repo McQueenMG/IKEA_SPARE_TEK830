@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class CustomSearchBar extends StatefulWidget {
   final Function(String) onSearch;
 
-  const CustomSearchBar({Key? key, required this.onSearch}) : super(key: key);
+  const CustomSearchBar({super.key, required this.onSearch});
 
   @override
   _CustomSearchBarState createState() => _CustomSearchBarState();
 }
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void dispose() {
@@ -28,10 +28,10 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         decoration: InputDecoration(
           labelText: 'Search',
           hintText: 'Enter search',
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           suffixIcon: _searchController.text.isNotEmpty
               ? IconButton(
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                   onPressed: () {
                     _searchController.clear();
                     widget.onSearch('');

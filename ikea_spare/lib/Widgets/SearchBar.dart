@@ -27,7 +27,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         onChanged: widget.onSearch,
         decoration: InputDecoration(
           labelText: 'Search',
-          hintText: 'Enter search term',
+          hintText: 'Enter search',
           prefixIcon: Icon(Icons.search),
           suffixIcon: _searchController.text.isNotEmpty
               ? IconButton(

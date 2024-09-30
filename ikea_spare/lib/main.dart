@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 // Import your ItemCard
+import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'IKEA SPARE (Spare Parts acquisition and resource exchange)'),
     );
   }
 }
@@ -57,6 +58,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+    String _searchText = '';
+
+  void _onSearchChanged(String searchText) {
+    setState(() {
+      _searchText = searchText;
+    });
+  }
   int _counter = 0;
 
   void _incrementCounter() {
@@ -83,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.yellow,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -107,13 +115,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           children: [
-            const Text("This is the spare part list of items"),
+            SizedBox(
+                  width: 600,
+                  height: 50,
+                  child:CustomSearchBar(onSearch: _onSearchChanged),
+                ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   width: 600,
-                  height: 585,
+                  height: 565,
                   child: SparePartGrid().getListWidget(),
                 ),
               ],

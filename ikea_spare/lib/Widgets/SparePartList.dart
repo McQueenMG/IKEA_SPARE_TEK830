@@ -4,10 +4,10 @@ import 'package:ikea_spare/Parts.dart';
 import 'package:ikea_spare/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
-class SparePartGrid {
+class SparePartList {
   late List<SparePart> parts;
 
-  SparePartGrid() {
+  SparePartList() {
     Parts partsInstance = Parts();
     parts = partsInstance.getSpareParts();
   }
@@ -21,11 +21,7 @@ class SparePartGrid {
         return Column(
           children: [
             ListCard(
-              id: parts[index].id,
-              name: parts[index].name,
-              description: parts[index].description,
-              imageUrl: parts[index].imageUrl,
-              quantity: parts[index].quantity,
+              part: parts[index],
             ),
           ],
         );

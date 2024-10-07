@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ikea_spare/Parts.dart';
+import 'package:ikea_spare/Backend/Parts.dart';
 
-import 'package:ikea_spare/SparePart.dart';
+import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class SparePartList {

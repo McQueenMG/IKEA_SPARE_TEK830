@@ -1,4 +1,4 @@
-import 'package:ikea_spare/SparePart.dart';
+import 'package:ikea_spare/Backend/SparePart.dart';
 
 class SearchFilter {
   // Filter spare parts by name or id

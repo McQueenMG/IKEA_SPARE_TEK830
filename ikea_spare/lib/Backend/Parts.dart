@@ -1,7 +1,7 @@
 
 // ignore_for_file: prefer_final_fields
 
-import 'package:ikea_spare/SparePart.dart';
+import 'package:ikea_spare/Backend/SparePart.dart';
 
 class Parts {
   SparePart _part1 = SparePart(

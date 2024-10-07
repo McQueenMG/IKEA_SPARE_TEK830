@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ikea_spare/SparePart.dart';
+import 'package:ikea_spare/Backend/SparePart.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({

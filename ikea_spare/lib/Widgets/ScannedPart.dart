@@ -24,11 +24,11 @@ class ScannedPart extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: go,
-                child: const Text("Add")
+                child: const Text("Remove")
               ), 
               ElevatedButton(
                 onPressed: go,
-                child: const Text("Remove")
+                child: const Text("Add")
               ), 
               ],
           ),

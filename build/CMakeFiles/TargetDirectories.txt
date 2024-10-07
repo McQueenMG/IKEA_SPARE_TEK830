@@ -1,0 +1,10 @@
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/CMakeFiles/INSTALL.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/flutter/CMakeFiles/INSTALL.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/runner/CMakeFiles/ikea_spare.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/runner/CMakeFiles/INSTALL.dir
+C:/Users/smelk/OneDrive/Skrivbord/ChalmersCode/IKEA_SPARE/IKEA_SPARE_TEK830/build/runner/CMakeFiles/ALL_BUILD.dir

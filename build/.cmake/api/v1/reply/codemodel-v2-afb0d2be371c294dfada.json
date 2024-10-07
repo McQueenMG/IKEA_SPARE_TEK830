@@ -143,7 +143,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "ikea_spare::@056c4f61b0156d1d9b06",
-					"jsonFile" : "target-ikea_spare-Debug-9bf1665003bd19518382.json",
+					"jsonFile" : "target-ikea_spare-Debug-105513452bb9463203b3.json",
 					"name" : "ikea_spare",
 					"projectIndex" : 1
 				}
@@ -291,7 +291,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "ikea_spare::@056c4f61b0156d1d9b06",
-					"jsonFile" : "target-ikea_spare-Profile-2d2e2f9a1696b3d9950e.json",
+					"jsonFile" : "target-ikea_spare-Profile-36f643082fcff98acc13.json",
 					"name" : "ikea_spare",
 					"projectIndex" : 1
 				}
@@ -439,7 +439,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "ikea_spare::@056c4f61b0156d1d9b06",
-					"jsonFile" : "target-ikea_spare-Release-bf3d88e38b0b21336e9d.json",
+					"jsonFile" : "target-ikea_spare-Release-e291796bf64119e37357.json",
 					"name" : "ikea_spare",
 					"projectIndex" : 1
 				}

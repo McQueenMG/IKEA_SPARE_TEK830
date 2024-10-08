@@ -1,9 +1,12 @@
 
 // ignore_for_file: prefer_final_fields
 
+import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
 class Parts {
+  static final Parts _this = Parts._privateConstructor();
+
   SparePart _part1 = SparePart(
       "761310",
       "Foot",
@@ -50,17 +53,50 @@ class Parts {
     1
   );
 
-  List<SparePart> _partsList = List.empty(growable: true);
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  Product _product1 = Product(
+    "10568068", 
+    "Vindås", 
+    "https://www.ikea.com/se/sv/images/products/vindas-kyl-frysskap-ikea-300-fristaende-rostfritt-stalfaerg__1201509_pe905678_s5.jpg?f=xl", 
+    []
+  );
 
-  Parts() {
+  static List<SparePart> _partsList = List.empty(growable: true);
+  static List<Product> _productList = List.empty(growable: true);
+
+  // constructor returns this 
+  factory Parts() => _this;
+
+  Parts._privateConstructor() {
+    // spare-parts
     _partsList.add(_part1);
     _partsList.add(_part2);
     _partsList.add(_part3);
     _partsList.add(_part4);
     _partsList.add(_part5);
     _partsList.add(_part6);
+
+    // products
+    _product1.addListOfSpareParts([_part1, _part2]);
   }
   List<SparePart> getSpareParts() => _partsList;
+
+  void k() {
+    _partsList.removeLast();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* SparePart getSparePartFromId(String id) {
     SparePart part = SparePart("0", "Not Found", "Not Found",

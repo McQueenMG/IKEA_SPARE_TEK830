@@ -4,8 +4,18 @@
 import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
+/* 
+  Collection of all the spare-parts and products.
+
+  Example of how to access spare-parts:
+    Parts partsInstance = Parts();
+    partsInstance.getSpareParts();
+ */
+
 class Parts {
   static final Parts _this = Parts._privateConstructor();
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   SparePart _part1 = SparePart(
       "761310",
@@ -62,12 +72,20 @@ class Parts {
     []
   );
 
+  Product _product2 = Product(
+    "fakeID", 
+    "your mother", 
+    "https://chargeraccount.org/wp-content/uploads/2023/06/K7Kk3DSxN0r4AVhONa9ruggbas3DWRIrbnHw1dJc-1-900x600.jpg", 
+    []
+  );
+
   static List<SparePart> _partsList = List.empty(growable: true);
   static List<Product> _productList = List.empty(growable: true);
 
-  // constructor returns this 
+  // public constructor that always returns the same instance
   factory Parts() => _this;
 
+  // private constructor to avoid multiple instances
   Parts._privateConstructor() {
     // spare-parts
     _partsList.add(_part1);
@@ -78,49 +96,14 @@ class Parts {
     _partsList.add(_part6);
 
     // products
+    // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE
+
     _product1.addListOfSpareParts([_part1, _part2]);
+    _product2.addListOfSpareParts([_part3, _part2, _part5]);
+
+    _productList.addAll([_product1, _product2]);
   }
   List<SparePart> getSpareParts() => _partsList;
+  List<Product> getProducts() => _productList;
 
-
-
-
-
-
-
-
-
-
-
-
-
-  /* SparePart getSparePartFromId(String id) {
-    SparePart part = SparePart("0", "Not Found", "Not Found",
-        "https://www.ikea.com/global/assets/logos/brand/ikea.svg", 0);
-    _partsList.forEach((element) {
-      if (element.getId() == id) {
-        part = element;
-      }
-    });
-    return part;
-  }
-
-  SparePart getSparePartFromName(String name) {
-    SparePart part = SparePart("0", "Not Found", "Not Found",
-        "https://www.ikea.com/global/assets/logos/brand/ikea.svg", 0);
-    _partsList.forEach((element) {
-      if (element.getName == name) {
-        part = element;
-      }else{
-        throw Exception("Part not found");
-      }
-    });
-    return part;
-  } */
-
-/* static List<String> getIDs() {
-  List<String> ids = List.empty(growable: true);
-  getSpareParts().keys.forEach((part) => ids.add(part));
-  return ids;
-} */
 }

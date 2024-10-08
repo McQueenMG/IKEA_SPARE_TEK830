@@ -23,7 +23,7 @@ class ListCard extends StatelessWidget {
               width: 150, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
               child: Image.network(
-                part.imageUrl,
+                part.getImageUrl,
                 fit: BoxFit.cover, // Adjust to cover the container
               ),
             ),
@@ -36,7 +36,7 @@ class ListCard extends StatelessWidget {
                       CrossAxisAlignment.start, // Align text to the start
                   children: [
                     Text(
-                      part.name,
+                      part.getName,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
@@ -44,19 +44,19 @@ class ListCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4), // Space between title and subtitle
                     Text(
-                      "ID: ${part.id}",
+                      "ID: ${part.getId}",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
                     ),
                     Text(
-                      "Quantity: ${part.quantity}",
+                      "Quantity: ${part.getQuantity}",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
                     ),
                     Text(
-                      part.description,
+                      part.getDescription,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,

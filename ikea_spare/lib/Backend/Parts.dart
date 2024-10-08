@@ -82,10 +82,6 @@ class Parts {
   }
   List<SparePart> getSpareParts() => _partsList;
 
-  void k() {
-    _partsList.removeLast();
-  }
-
 
 
 

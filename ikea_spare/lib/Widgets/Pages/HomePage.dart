@@ -46,9 +46,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Flexible(
-                      flex: 1,
-                      child: SparePartList().getListWidget(),
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.8,
+                        maxHeight: height * 0.8,
+                      ),
+                      child: Flexible(
+                        flex: 1,
+                        child: SparePartList().getListWidget(),
+                      ),
                     ),
                   ],
                 ),

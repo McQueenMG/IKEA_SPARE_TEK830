@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/Parts.dart';
 
 import 'package:ikea_spare/Backend/SparePart.dart';
+import 'package:ikea_spare/Widgets/DropdownCard.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class SparePartList {
@@ -20,9 +21,7 @@ class SparePartList {
       itemBuilder: (_, index) {
         return Column(
           children: [
-            ListCard(
-              part: parts[index],
-            ),
+            DropdownCard(title: parts[index].name),
           ],
         );
       },

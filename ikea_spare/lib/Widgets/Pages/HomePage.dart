@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/ScannedPart.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 
@@ -38,7 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Row(
           children: [
-            SizedBox(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
               width: 600,
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
@@ -57,6 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             )
+            ]
+            ),
+            SizedBox(
+              width: 600,
+              height: 565,
+              child:ScannedPart(name: "test", image: 'https://media.tenor.com/wsbmWYxnJYQAAAAM/kermit-falling.gif', quantity: 1)
+            ),
           ],
         ),
       ),

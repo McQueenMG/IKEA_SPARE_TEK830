@@ -20,16 +20,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  double width = 0;
+  double height = 0;
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.sizeOf(context).width;
+    height = MediaQuery.sizeOf(context).height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
@@ -43,27 +41,25 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 16.0, right: 16.0), // Adjust padding as needed
+            Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: 600,
-                    height: 565,
-                    child: SparePartList().getListWidget(),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.75,
+                        maxHeight: height,
+                      ),
+                      child: SparePartList().getListWidget(),
+                    ),
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

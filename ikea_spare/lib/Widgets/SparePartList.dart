@@ -18,6 +18,7 @@ class SparePartList {
   ListView getListWidget() {
     return ListView.builder(
       scrollDirection: Axis.vertical,
+      shrinkWrap: true,
       addAutomaticKeepAlives: false, // Garbage collection
       itemCount: parts.length,
       itemBuilder: (_, index) {

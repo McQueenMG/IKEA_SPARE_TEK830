@@ -41,24 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
-            Expanded(
-              child: SingleChildScrollView(
+            Flexible(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ConstrainedBox(
                       constraints: BoxConstraints(
-                        maxWidth: width * 0.8,
-                        maxHeight: height * 0.8,
+                        maxWidth: width * 0.75,
+                        maxHeight: height,
                       ),
-                      child: Flexible(
-                        flex: 1,
-                        child: SparePartList().getListWidget(),
-                      ),
+                      child: SparePartList().getListWidget(),
                     ),
                   ],
                 ),
-              ),
             ),
           ],
         ),

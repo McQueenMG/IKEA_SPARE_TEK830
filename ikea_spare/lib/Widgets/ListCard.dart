@@ -13,14 +13,14 @@ class ListCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 150,
+      height: 90,
       child: Card(
         color: Colors.lightBlue[50],
         child: Row(
           children: <Widget>[
             Container(
               padding: const EdgeInsets.all(8),
-              width: 150, // Fixed width for the image
+              width: 90, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
               child: Image.network(
                 part.getImageUrl,
@@ -55,12 +55,12 @@ class ListCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       softWrap: false,
                     ),
-                    Text(
-                      part.getDescription,
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                    ),
+                    // Text(
+                    //   part.getDescription,
+                    //   maxLines: 3,
+                    //   overflow: TextOverflow.ellipsis,
+                    //   softWrap: false,
+                    // ),
                   ],
                 ),
               ),

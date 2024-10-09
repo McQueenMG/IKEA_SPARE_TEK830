@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
+import 'package:ikea_spare/Widgets/FilterButton.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -41,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
+            const SingleChoice(),
             Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

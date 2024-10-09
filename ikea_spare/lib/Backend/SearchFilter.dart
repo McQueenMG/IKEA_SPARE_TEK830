@@ -1,7 +1,17 @@
 import 'package:ikea_spare/Backend/SparePart.dart';
+import 'package:ikea_spare/Backend/Parts.dart';
 
 class SearchFilter {
-  // Filter spare parts by name or id
+  //List<SparePart> filteredItems = [];
+
+  //void onSearch(String query) {
+   // Parts partsInstance = Parts();
+   // filteredItems = partsInstance.getSpareParts().where((Parts) => Parts.id.toLowerCase().contains(query.toLowerCase())).toList();
+ // }
+}
+
+ /*
+ // Filter spare parts by name or id
   static List<SparePart> filterSpareParts(List<SparePart> parts, String query) {
     if (query.isEmpty) return parts; // Return all parts if query is empty
     
@@ -13,9 +23,9 @@ class SearchFilter {
           part.getId.toLowerCase().contains(query);
     }).toList();
   }
-}
-
- /* void runFilter(String enteredKeyword) {
+ 
+ 
+  void runFilter(String enteredKeyword) {
     List<SparePart> results = [];
     if (enteredKeyword.isEmpty) {
       // if the search field is empty, we'll display all items

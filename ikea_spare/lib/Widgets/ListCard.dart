@@ -16,7 +16,7 @@ class ListCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(6),
               width: 90, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
               child: Image.network(
@@ -26,32 +26,55 @@ class ListCard extends StatelessWidget {
             ),
             
             Expanded(
-              // Use Expanded to fill remaining space
-              child: Padding(
-                padding: const EdgeInsets.all(8.0), // Add padding for text
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
                   children: [
-                    Text(
-                      part.getName,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
+                          part.getName,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    const SizedBox(
-                        height: 4), // Space between title and subtitle
-                    Text(
-                      "ID: ${part.getId}",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
+                    const VerticalDivider(),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
+                          "ID: ${part.getId}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                        ),
+                      ),
                     ),
-                    Text(
-                      "Quantity: ${part.getQuantity}",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
+                    const VerticalDivider(),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
+                          part.getDescription,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                        ),
+                      ),
+                    ),
+                    const VerticalDivider(),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
+                          "Quantity: ${part.getQuantity}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                        ),
+                      ),
                     ),
                     // Text(
                     //   part.getDescription,
@@ -61,7 +84,6 @@ class ListCard extends StatelessWidget {
                     // ),
                   ],
                 ),
-              ),
             ),
           ],
         ),

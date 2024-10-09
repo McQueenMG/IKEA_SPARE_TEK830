@@ -6,11 +6,14 @@ class ListCard extends StatelessWidget {
 
   final SparePart part;
 
+  final double cardHeight = 90;
+  final int maxLines = 3;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 90,
+      height: cardHeight,
       child: Card(
         color: Colors.lightBlue[50],
         child: Row(
@@ -33,7 +36,7 @@ class ListCard extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         child: Text(
                           part.getName,
-                          maxLines: 1,
+                          maxLines: maxLines,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
                           style: const TextStyle(fontWeight: FontWeight.bold),
@@ -46,31 +49,31 @@ class ListCard extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         child: Text(
                           "ID: ${part.getId}",
-                          maxLines: 1,
+                          maxLines: maxLines,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
                         ),
                       ),
                     ),
-                    const VerticalDivider(),
+                    /*const VerticalDivider(),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         child: Text(
                           part.getDescription,
-                          maxLines: 3,
+                          maxLines: maxLines,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
                         ),
                       ),
-                    ),
+                    ),*/
                     const VerticalDivider(),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         child: Text(
                           "Quantity: ${part.getQuantity}",
-                          maxLines: 1,
+                          maxLines: maxLines,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
                         ),

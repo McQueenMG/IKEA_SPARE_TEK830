@@ -9,8 +9,8 @@ class SearchFilter {
     
     // Filter parts by name or ID
     return parts.where((part) {
-      return part.name.toLowerCase().contains(query) ||
-          part.id.toLowerCase().contains(query);
+      return part.getName.toLowerCase().contains(query) ||
+          part.getId.toLowerCase().contains(query);
     }).toList();
   }
 }

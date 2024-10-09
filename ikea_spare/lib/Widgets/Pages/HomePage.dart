@@ -43,16 +43,20 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 600,
-                  height: 565,
-                  child: SparePartList().getListWidget(),
-                ),
-              ],
-            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 16.0, right: 16.0), // Adjust padding as needed
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 600,
+                    height: 565,
+                    child: SparePartList().getListWidget(),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

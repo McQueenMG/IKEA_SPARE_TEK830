@@ -5,7 +5,7 @@ import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class DropdownCard extends StatefulWidget {
   // Accepting title as a required argument
-  DropdownCard({super.key, required this.title});
+  const DropdownCard({super.key, required this.title});
 
   final String title;
 
@@ -26,7 +26,7 @@ class _CardWidgetState extends State<DropdownCard> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         // Title card with toggle functionality
         GestureDetector(
           onTap: () {
@@ -37,12 +37,12 @@ class _CardWidgetState extends State<DropdownCard> {
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 131, 181, 223),
               borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0)),
               ],
             ),
             child: Padding(
-              padding: EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -53,7 +53,7 @@ class _CardWidgetState extends State<DropdownCard> {
                     height: 40.0, 
                     fit: BoxFit.cover, 
                   ),
-                  SizedBox(
+                  const SizedBox(
                       width:
                           10.0),
                   // Title text
@@ -73,7 +73,7 @@ class _CardWidgetState extends State<DropdownCard> {
                   );
                 }).toList(),
               )
-            : SizedBox(), // Else, show nothing
+            : const SizedBox(), // Else, show nothing
       ],
     );
   }

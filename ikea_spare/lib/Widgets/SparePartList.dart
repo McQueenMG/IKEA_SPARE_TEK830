@@ -3,7 +3,6 @@ import 'package:ikea_spare/Backend/Parts.dart';
 
 import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/DropdownCard.dart';
-import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class SparePartList {
   late List<SparePart> parts;

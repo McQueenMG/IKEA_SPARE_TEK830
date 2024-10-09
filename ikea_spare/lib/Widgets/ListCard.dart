@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
 class ListCard extends StatelessWidget {
-  const ListCard({
-    super.key,
-    required this.part
-    });
+  const ListCard({super.key, required this.part});
 
   final SparePart part;
 
@@ -17,7 +14,7 @@ class ListCard extends StatelessWidget {
       child: Card(
         color: Colors.lightBlue[50],
         child: Row(
-          children: <Widget>[
+          children: [
             Container(
               padding: const EdgeInsets.all(8),
               width: 150, // Fixed width for the image
@@ -27,13 +24,13 @@ class ListCard extends StatelessWidget {
                 fit: BoxFit.cover, // Adjust to cover the container
               ),
             ),
+            
             Expanded(
               // Use Expanded to fill remaining space
               child: Padding(
                 padding: const EdgeInsets.all(8.0), // Add padding for text
                 child: Column(
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start, // Align text to the start
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       part.name,
@@ -42,7 +39,8 @@ class ListCard extends StatelessWidget {
                       softWrap: false,
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 4), // Space between title and subtitle
+                    const SizedBox(
+                        height: 4), // Space between title and subtitle
                     Text(
                       "ID: ${part.id}",
                       maxLines: 1,

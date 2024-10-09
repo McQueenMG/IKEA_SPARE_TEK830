@@ -79,6 +79,13 @@ class Parts {
     []
   );
 
+  Product _product3 = Product(
+    "lol",
+    "yeah",
+    "https://mlpforums.com/uploads/post_images/img-2978630-1-F4Du9wL.jpg",
+    []
+  );
+
   static List<SparePart> _partsList = List.empty(growable: true);
   static List<Product> _productList = List.empty(growable: true);
 
@@ -100,8 +107,9 @@ class Parts {
 
     _product1.addListOfSpareParts([_part1, _part2]);
     _product2.addListOfSpareParts([_part3, _part2, _part5]);
+    _product3.addListOfSpareParts([_part1, _part4, _part6, _part2]);
 
-    _productList.addAll([_product1, _product2]);
+    _productList.addAll([_product1, _product2, _product3]);
   }
   List<SparePart> getSpareParts() => _partsList;
   List<Product> getProducts() => _productList;

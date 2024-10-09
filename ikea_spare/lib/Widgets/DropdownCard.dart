@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/Parts.dart';
+import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class DropdownCard extends StatefulWidget {
   // Accepting title as a required argument
-  const DropdownCard({super.key, required this.title});
+  const DropdownCard({super.key, required this.product});
 
-  final String title;
+  final Product product;
 
   @override
   _CardWidgetState createState() => _CardWidgetState();
@@ -21,7 +22,7 @@ class _CardWidgetState extends State<DropdownCard> {
   @override
   Widget build(BuildContext context) {
     // Fetch the parts list
-    List<SparePart> parts = partsInstance.getSpareParts();
+    List<SparePart> parts = widget.product.getSpareParts;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,13 +43,13 @@ class _CardWidgetState extends State<DropdownCard> {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(9.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   // Add the network image here
                   Image.network(
-                    'https://media.tenor.com/wsbmWYxnJYQAAAAM/kermit-falling.gif', // Replace with your image URL
+                    widget.product.getImageUrl,
                     width: 40.0,
                     height: 40.0, 
                     fit: BoxFit.cover, 
@@ -57,7 +58,7 @@ class _CardWidgetState extends State<DropdownCard> {
                       width:
                           10.0),
                   // Title text
-                  Text(widget.title),
+                  Text(widget.product.getName),
                 ],
               ),
             ),

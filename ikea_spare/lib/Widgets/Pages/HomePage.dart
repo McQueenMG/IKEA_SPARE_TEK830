@@ -42,18 +42,21 @@ class _MyHomePageState extends State<MyHomePage> {
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
             Flexible(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ConstrainedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
                       constraints: BoxConstraints(
                         maxWidth: width * 0.75,
                         maxHeight: height,
                       ),
                       child: SparePartList().getListWidget(),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

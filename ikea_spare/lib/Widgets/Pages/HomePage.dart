@@ -67,11 +67,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                         maxWidth: width * 0.5,
-                        maxHeight: height * 0.035,
+                        maxHeight: height * 0.1,
                       ),
                       child: const SparePartListHeader(),
                     ),
                   ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ConstrainedBox(
+                            constraints: BoxConstraints(
+                              maxWidth: width * 0.5,
+                              maxHeight: height * 0.1,
+                            ),
+                            child: const Divider(
+                    thickness: 0.1,
+                    color: Colors.black,
+                    height: 5,
+                  ),
+                          ),
                 ],
               ),
             ),

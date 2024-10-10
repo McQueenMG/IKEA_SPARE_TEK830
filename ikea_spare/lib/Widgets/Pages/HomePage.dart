@@ -52,11 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
             SizedBox(
-              width: 400, // Set the desired width
-              height: 100, // Set the desired height
+              width: 400, 
+              height: 100, 
               child: FilterButton(
-                selectedFilter: selectedFilter, // Pass the selected filter
-                onFilterChanged: _onFilterChanged, // Pass the callback function
+                selectedFilter: selectedFilter, 
+                onFilterChanged: _onFilterChanged, 
                 ),
               ),
             Flexible(
@@ -70,7 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxWidth: width * 0.5,
                         maxHeight: height,
                       ),
-                      // Pass the selected filter to SparePartList
                       child: SparePartList(filter: selectedFilter),
                     ),
                   ),

@@ -36,7 +36,7 @@ import 'package:ikea_spare/Widgets/ListCard.dart';
 } */
 
 class SparePartList extends StatelessWidget {
-  final Filter filter; // Accept the filter
+  final Filter filter; 
 
   SparePartList({super.key, required this.filter});
 

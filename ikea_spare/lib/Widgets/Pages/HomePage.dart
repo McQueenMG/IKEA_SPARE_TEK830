@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
+import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxWidth: width * 0.75,
                         maxHeight: height * 0.035,
                       ),
-                      child: SparePartList().getListHeader(),
+                      child: SparePartListHeader(),
                     ),
                   ),
                 ],

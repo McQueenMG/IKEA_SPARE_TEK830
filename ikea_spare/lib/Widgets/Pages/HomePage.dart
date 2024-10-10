@@ -66,10 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(left: 16.0),
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
-                        maxWidth: width * 0.75,
+                        maxWidth: width * 0.5,
                         maxHeight: height * 0.035,
                       ),
-                      child: SparePartListHeader(),
+                      child: const SparePartListHeader(),
                     ),
                   ),
                 ],

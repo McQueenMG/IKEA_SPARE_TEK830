@@ -72,6 +72,18 @@ class ListCard extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                         child: Text(
+                          "Location: temp",
+                          maxLines: maxLines,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: false,
+                        ),
+                      ),
+                    ),
+                    const VerticalDivider(),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Text(
                           "Quantity: ${part.getQuantity}",
                           maxLines: maxLines,
                           overflow: TextOverflow.ellipsis,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 import 'package:ikea_spare/Widgets/FilterButton.dart';
+import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -15,10 +16,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
+  Filter selectedFilter = Filter.All; // Default filter set to "All"
 
   void _onSearchChanged(String searchText) {
     setState(() {
       _searchText = searchText;
+    });
+  }
+
+  void _onFilterChanged(Filter newFilter) {
+    setState(() {
+      selectedFilter = newFilter;
     });
   }
 
@@ -43,7 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
-            const SingleChoice(),
+            SizedBox(
+              width: 400, // Set the desired width
+              height: 100, // Set the desired height
+              child: FilterButton(
+                selectedFilter: selectedFilter, // Pass the selected filter
+                onFilterChanged: _onFilterChanged, // Pass the callback function
+                ),
+              ),
             Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -55,7 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxWidth: width * 0.5,
                         maxHeight: height,
                       ),
-                      child: SparePartList().getListWidget(),
+                      // Pass the selected filter to SparePartList
+                      child: SparePartList(filter: selectedFilter),
                     ),
                   ),
                 ],
@@ -67,3 +83,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+

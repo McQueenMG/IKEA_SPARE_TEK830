@@ -1,66 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 
 class FilterButton extends StatelessWidget {
-  const FilterButton({super.key}); // Added missing semicolon
+  final Filter selectedFilter; // Accept the current filter
+  final Function(Filter) onFilterChanged; // Accept the callback to change the filter
+
+  const FilterButton({super.key, required this.selectedFilter, required this.onFilterChanged});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: const Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Spacer(),
-              //Text('Filter'),
-              SingleChoice(),
-              SizedBox(
-                width: 100,
-                height: 20),
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // Use Flexible to avoid infinite height issue
+            Flexible(
+              child: FilterButtonChoice(
+                selectedFilter: selectedFilter,  // <-- Provide the selected filter
+                onFilterChanged: onFilterChanged,  // <-- Provide the callback
+              ),
+            ),
+            const SizedBox(
+              width: 100,
+              height: 20,
+            ),
+          ],
         ),
       ),
-    );
-  }
-}
-
-enum Filter { All, Part, Product }
-
-class SingleChoice extends StatefulWidget {
-  const SingleChoice({super.key});
-
-  @override
-  State<SingleChoice> createState() => _SingleChoiceState();
-}
-
-class _SingleChoiceState extends State<SingleChoice> {
-  Filter filterView = Filter.All;
-
-  @override
-  Widget build(BuildContext context) {
-    return SegmentedButton<Filter>(
-      segments: const <ButtonSegment<Filter>>[
-        ButtonSegment<Filter>(
-          value: Filter.All,
-          label: Text('All'),
-        ), 
-        ButtonSegment<Filter>(
-          value: Filter.Part,
-          label: Text('Spare Part'),
-        ), 
-        ButtonSegment<Filter>(
-          value: Filter.Product,
-          label: Text('Product'),
-        ),
-      ],
-      selected: <Filter>{filterView}, 
-      onSelectionChanged: (Set<Filter> newSelection) {
-        setState(() {
-          filterView = newSelection.first;
-        });
-      },
     );
   }
 }

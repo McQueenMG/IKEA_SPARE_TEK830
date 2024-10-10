@@ -69,12 +69,10 @@ class _SparePartListState extends State<SparePartList> {
 
     List<Widget> filteredItems = itemFilter.getFilteredItems();
 
-    return Expanded(
-      child: ListView(
+    return ListView(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
         children: filteredItems,
-      ),
     );
   }
 }

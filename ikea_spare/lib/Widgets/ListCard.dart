@@ -27,78 +27,59 @@ class ListCard extends StatelessWidget {
                 fit: BoxFit.cover, // Adjust to cover the container
               ),
             ),
-            
             Expanded(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Text(
-                          part.getName,
-                          maxLines: maxLines,
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: false,
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: Text(
+                        part.getName,
+                        maxLines: maxLines,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const VerticalDivider(),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Text(
-                          "ID: ${part.getId}",
-                          maxLines: maxLines,
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: false,
-                        ),
+                  ),
+                  const VerticalDivider(),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: Text(
+                        "ID: ${part.getId}",
+                        maxLines: maxLines,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
                       ),
                     ),
-                    /*const VerticalDivider(),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Text(
-                          part.getDescription,
-                          maxLines: maxLines,
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: false,
-                        ),
-                      ),
-                    ),*/
-                    const VerticalDivider(),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Text(
-                          "Location: temp",
-                          maxLines: maxLines,
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: false,
-                        ),
+                  ),
+                  const VerticalDivider(),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: Text(
+                        "Location: temp",
+                        maxLines: maxLines,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
                       ),
                     ),
-                    const VerticalDivider(),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                        child: Text(
-                          "Quantity: ${part.getQuantity}",
-                          maxLines: maxLines,
-                          overflow: TextOverflow.ellipsis,
-                          softWrap: false,
-                        ),
+                  ),
+                  const VerticalDivider(),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: Text(
+                        "Quantity: ${part.getQuantity}",
+                        maxLines: maxLines,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: false,
                       ),
                     ),
-                    // Text(
-                    //   part.getDescription,
-                    //   maxLines: 3,
-                    //   overflow: TextOverflow.ellipsis,
-                    //   softWrap: false,
-                    // ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

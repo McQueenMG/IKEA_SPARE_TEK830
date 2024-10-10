@@ -47,7 +47,7 @@ class ListCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Text(
-                        "ID: ${part.getId}",
+                        part.getId,
                         maxLines: maxLines,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
@@ -59,7 +59,7 @@ class ListCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Text(
-                        "Location: temp",
+                        "temp",
                         maxLines: maxLines,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
@@ -71,7 +71,7 @@ class ListCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Text(
-                        "Quantity: ${part.getQuantity}",
+                        "${part.getQuantity}",
                         maxLines: maxLines,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,

@@ -5,6 +5,7 @@ import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/DropdownCard.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
+import 'package:ikea_spare/Backend/SearchFilter.dart';
 
 
 /*class SparePartList {
@@ -35,38 +36,45 @@ import 'package:ikea_spare/Widgets/ListCard.dart';
   }
 } */
 
-class SparePartList extends StatelessWidget {
+class SparePartList extends StatefulWidget {
   final Filter filter; 
+  final String searchText; 
 
-  SparePartList({super.key, required this.filter});
+  SparePartList({super.key, required this.filter, required this.searchText});
+
+  @override
+  _SparePartListState createState() => _SparePartListState();
+}
+
+class _SparePartListState extends State<SparePartList> {
+  List<SparePart> _parts = [];
+  List<Product> _products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    Parts partsInstance = Parts();
+    _parts = partsInstance.getSpareParts();
+    _products = partsInstance.getProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
-    Parts partsInstance = Parts();
-    List<SparePart> parts = partsInstance.getSpareParts();
-    List<Product> products = partsInstance.getProducts();
+    SearchFilter itemFilter = SearchFilter(
+      filter: widget.filter,
+      searchText: widget.searchText,
+      parts: _parts,
+      products: _products,
+    );
 
-    // Filter parts or products based on the selected filter
-    List<Widget> filteredItems;
-    switch (filter) {
-      case Filter.All:
-        filteredItems = [
-          ...parts.map((part) => ListCard(part: part)),
-          ...products.map((product) => DropdownCard(product: product)),
-        ];
-        break;
-      case Filter.Part:
-        filteredItems = parts.map((part) => ListCard(part: part)).toList();
-        break;
-      case Filter.Product:
-        filteredItems = products.map((product) => DropdownCard(product: product)).toList();
-        break;
-    }
+    List<Widget> filteredItems = itemFilter.getFilteredItems();
 
-    return ListView(
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      children: filteredItems,
+    return Expanded(
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        children: filteredItems,
+      ),
     );
   }
 }

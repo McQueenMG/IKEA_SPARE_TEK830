@@ -30,13 +30,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  double width = 0;
-  double height = 0;
-
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.sizeOf(context).width;
-    height = MediaQuery.sizeOf(context).height;
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -52,13 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
             SizedBox(
-              width: 400, 
-              height: 100, 
+              width: 400,
+              height: 100,
               child: FilterButton(
-                selectedFilter: selectedFilter, 
-                onFilterChanged: _onFilterChanged, 
-                ),
+                selectedFilter: selectedFilter,
+                onFilterChanged: _onFilterChanged,
               ),
+            ),
             Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxWidth: width * 0.5,
                         maxHeight: height,
                       ),
-                      child: SparePartList(filter: selectedFilter),
+                      child: SparePartList(
+                        filter: selectedFilter,
+                        searchText: _searchText,
+                      ),
                     ),
                   ),
                 ],

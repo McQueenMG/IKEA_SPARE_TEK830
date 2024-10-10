@@ -2,13 +2,20 @@ import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Backend/Parts.dart';
 
 class SearchFilter {
-  //List<SparePart> filteredItems = [];
+  List<SparePart> filteredItems = [];
+
+  
+
+ 
+
+}
+
+  
 
   //void onSearch(String query) {
    // Parts partsInstance = Parts();
    // filteredItems = partsInstance.getSpareParts().where((Parts) => Parts.id.toLowerCase().contains(query.toLowerCase())).toList();
  // }
-}
 
  /*
  // Filter spare parts by name or id

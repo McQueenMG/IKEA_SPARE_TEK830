@@ -16,7 +16,7 @@ class SparePart {
   int get getQuantity => _quantity;
 
   void setQuantity(int quantity) {
-    this._quantity = quantity;
+    _quantity = quantity;
   }
   
 }

@@ -8,14 +8,14 @@ import 'package:ikea_spare/Widgets/DropdownCard.dart';
 class SearchFilter {
   final Filter filter;
   final String searchText;
-  final List<SparePart> parts;
   final List<Product> products;
+  final List<SparePart> parts;
 
   SearchFilter({
     required this.filter,
     required this.searchText,
-    required this.parts,
     required this.products,
+    required this.parts,
   });
 
   List<Widget> getFilteredItems() {
@@ -24,8 +24,8 @@ class SearchFilter {
     switch (filter) {
       case Filter.All:
         filteredItems = [
+           ...products.where((product) => product.getName.toLowerCase().contains(lowerCaseSearchText) || product.getId.toLowerCase().contains(lowerCaseSearchText)).map((product) => DropdownCard(product: product)),
           ...parts.where((part) => part.getName.toLowerCase().contains(lowerCaseSearchText) || part.getId.toLowerCase().contains(lowerCaseSearchText)).map((part) => ListCard(part: part)),
-          ...products.where((product) => product.getName.toLowerCase().contains(lowerCaseSearchText) || product.getId.toLowerCase().contains(lowerCaseSearchText)).map((product) => DropdownCard(product: product)),
         ];
         break;
       case Filter.Part:

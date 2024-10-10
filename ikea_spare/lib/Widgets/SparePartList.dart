@@ -47,15 +47,16 @@ class SparePartList extends StatefulWidget {
 }
 
 class _SparePartListState extends State<SparePartList> {
-  List<SparePart> _parts = [];
   List<Product> _products = [];
+  List<SparePart> _parts = [];
+  
 
   @override
   void initState() {
     super.initState();
     Parts partsInstance = Parts();
-    _parts = partsInstance.getSpareParts();
     _products = partsInstance.getProducts();
+    _parts = partsInstance.getSpareParts();
   }
 
   @override
@@ -63,8 +64,8 @@ class _SparePartListState extends State<SparePartList> {
     SearchFilter itemFilter = SearchFilter(
       filter: widget.filter,
       searchText: widget.searchText,
-      parts: _parts,
       products: _products,
+      parts: _parts,
     );
 
     List<Widget> filteredItems = itemFilter.getFilteredItems();

@@ -24,7 +24,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
       padding: const EdgeInsets.all(8.0),
       child: TextField(
         controller: _searchController,
-        onSubmitted: widget.onSearch,
+        onChanged: widget.onSearch,
         decoration: InputDecoration(
           labelText: 'Search',
           hintText: 'Enter search',

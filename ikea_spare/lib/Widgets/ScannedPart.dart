@@ -16,7 +16,7 @@ class ScannedPart extends StatefulWidget {
 class _ScannedPartState extends State<ScannedPart> {
   static int tmp = 0;
   Parts partsInstance = Parts();
-
+ // blah
   @override
   void initState() {
     super.initState();

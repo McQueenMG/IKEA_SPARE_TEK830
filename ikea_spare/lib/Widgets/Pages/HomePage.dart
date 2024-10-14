@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
+import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 import 'package:ikea_spare/Widgets/FilterButton.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
@@ -57,6 +58,46 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Flexible(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.5,
+                        maxHeight: 40,
+                      ),
+                      child: const SparePartListHeader(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                maxWidth: width * 0.5,
+                                maxHeight: height * 0.1,
+                              ),
+                              child: const Divider(
+                      thickness: 0.1,
+                      color: Colors.black,
+                      height: 5,
+                    ),
+                            ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              flex: 10,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

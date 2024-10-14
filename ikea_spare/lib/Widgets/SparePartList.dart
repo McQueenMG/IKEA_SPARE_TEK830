@@ -3,8 +3,6 @@ import 'package:ikea_spare/Backend/Parts.dart';
 import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
-import 'package:ikea_spare/Widgets/DropdownCard.dart';
-import 'package:ikea_spare/Widgets/ListCard.dart';
 import 'package:ikea_spare/Backend/SearchFilter.dart';
 
 

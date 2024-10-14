@@ -1,6 +1,6 @@
-
 // ignore_for_file: prefer_final_fields
 
+import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
@@ -22,21 +22,22 @@ class Parts {
       "Foot",
       "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
       "https://cdn.fixpart.net/126375/f1107baf9c6811d82078c4131e5a3d5c.jpg",
-      23);
+      ValueNotifier<int>(23));
 
   SparePart _part2 = SparePart(
       "H191825",
       "Cap White",
       "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
       "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
-      16);
+      ValueNotifier<int>(16)
+      );
 
   SparePart _part3 = SparePart(
     "U232204",
     "Ventilation Uc White Gw",
     "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/91543346/8ec4876ee019f7053530cd1b3d38b3d4.jpg",
-    5
+    ValueNotifier<int>(5)
   );
 
   SparePart _part4 = SparePart(
@@ -44,7 +45,7 @@ class Parts {
     "Freezer drawer",
     "Ersätter: #754487 C00341247 481941849693 DRAWER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/5120664/28cfba20b9f25a9d8d2020b17779536b.jpg",
-    1
+    ValueNotifier<int>(1)
   );
 
   SparePart _part5 = SparePart(
@@ -52,7 +53,7 @@ class Parts {
     "Spring Thermostat",
     "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/44098/9ae8d67525cd434d33ee8750d93cb970.jpg",
-    1
+    ValueNotifier<int>(1)
   );
 
   SparePart _part6 = SparePart(
@@ -60,7 +61,7 @@ class Parts {
     "Dwb305, Cutlery Basket_cz E Gr H P Ro Sk",
     "Ersätter: #F468189 DWB303 484000001070 CUTLERY BASKET WPRO UNIVERSAL.\nErsätter: #G746692 C00380125 484000008561 DWB304, 2 IN 1 UNIVERSAL DISHWASHER CUTLERY BASKET 20X22X16,4CM\nDenna artikel är kompatibel / passar för modellen: DWF902W / IKEA",
     "https://cdn.fixpart.net/90161177/a0cdcb58e4e6dbba4fb783108eb0e6da.jpg",
-    1
+    ValueNotifier<int>(1)
   );
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

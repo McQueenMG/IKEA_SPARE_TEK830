@@ -63,26 +63,110 @@ class Parts {
     1
   );
 
+  // MATTRADITION
+  SparePart _ovenSeal = SparePart(
+    "U252354", 
+    "Oven Seal Std Materia", 
+    "Ersätter: #H312064 C00385306 481010846713 DOOR SEAL\nErsätter: #X474268 OVEN DOOR GASKET ALTERNATIVE FOR BAUKNECHT 488000725238\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
+    "https://cdn.fixpart.net/91464896/59a67f1f6c1db26be8e961f6d5a00f0c.jpg", 
+    1
+  );
+
+  SparePart _bakingTray = SparePart(
+    "H982579", 
+    "Baking Tray, Grey", 
+    "Produktegenskaper\nBredd: 47,7 cm\nLängd: 37 cm\nHöjd: 2,3 cm\nMaterial: emaljerad\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
+    "https://cdn.fixpart.net/90120553/7bda9c4efaa248e22d215aa530a7332f.jpg", 
+    2
+  );
+
+  SparePart _innerDoorGlass = SparePart(
+    "Q781475", 
+    "Inner Door Glass", 
+    "Ersätter: #H315312 C00385305 481010826397 INNER DOOR GLASS\nErsätter: #Q118311 INNER DOOR GLASS ALTERNATIVE FOR WHIRLPOOL\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
+    "https://cdn.fixpart.net/90742626/9b762bbedbc028d0ddcd2c2cc94b3000.jpg", 
+    3
+  );
+
+  SparePart _ovenShelf = SparePart(
+    "U808059", 
+    "Oven Shelf 478.5 X 365 mm", 
+    "Ersätter: #H314677 C00385308 481010828296 OVEN SHELF\nErsätter: #M302893 C00526696 488000526696 OVEN SHELF 478,5 X 365 MM\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
+    "https://cdn.fixpart.net/221927674/30cc0434fd96da22124c239e7d51b862.jpg", 
+    4
+  );
+
+  // KOLSTAN
+
+  SparePart _masterCableClamp = SparePart(
+    "U261940", 
+    "Cable Clamp (for master)", 
+    "Replaces: #U805310 133.0617.059 CABLE CLAMP (FOR MASTER) 75.177.63 / 01\n(This article is compatible / suitable for the model: KOLSTAN KOLSTAN / IKEA", 
+    "https://cdn.fixpart.net/206979562/6d062ca2290c677d99ae6eeb4bd0fb11.jpg", 
+    5
+  );
+
+  SparePart _alimGeneratore = SparePart(
+    "U805311", 
+    "Coperchio Alim.generatore", 
+    "This article is compatible / suitable for the model: KOLSTAN KOLSTAN / IKEA", 
+    "https://cdn.fixpart.net/312448518/5b323db2d2aa31d77d3d36ad12344d77.jpg", 
+    6
+  );
+
+  // PINNTORP
+  SparePart _longScew = SparePart(
+    "10056782", 
+    "", 
+    "", 
+    "https://ikparts.com/wp-content/uploads/10056782.png", 
+    100
+  );
+
+  SparePart _woodStickThing = SparePart(
+    "110912", 
+    "", 
+    "", 
+    "https://ikparts.com/wp-content/uploads/2022/07/110912.png", 
+    75
+  );
+
+  SparePart _hexnut = SparePart(
+    "100712", 
+    "", 
+    "", 
+    "https://ikparts.com/wp-content/uploads/2022/07/100712.png", 
+    123
+  );
+
+  SparePart _metalBendThing = SparePart(
+    "122483", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/122483.png", 
+    23
+  );
+
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
-  Product _product1 = Product(
-    "10568068", 
-    "Vindås", 
-    "https://www.ikea.com/se/sv/images/products/vindas-kyl-frysskap-ikea-300-fristaende-rostfritt-stalfaerg__1201509_pe905678_s5.jpg?f=xl", 
+  Product _mattradition = Product(
+    "80411724", 
+    "MATTRADITION", 
+    "https://www.ikea.com/se/sv/images/products/mattradition-varmluftsugn-ikea-300-svart__0754906_pe748163_s5.jpg?f=xl", 
     []
   );
 
-  Product _product2 = Product(
-    "fakeID", 
-    "your mother", 
-    "https://chargeraccount.org/wp-content/uploads/2023/06/K7Kk3DSxN0r4AVhONa9ruggbas3DWRIrbnHw1dJc-1-900x600.jpg", 
+  Product _kolstan = Product(
+    "80559466", 
+    "KOLSTAN", 
+    "https://www.ikea.com/se/sv/images/products/kolstan-induktionshaell-ikea-500-svart__1225063_pe915121_s5.jpg?f=xl", 
     []
   );
 
-  Product _product3 = Product(
-    "lol",
-    "yeah",
-    "https://mlpforums.com/uploads/post_images/img-2978630-1-F4Du9wL.jpg",
+  Product _pinntorp = Product(
+    "_id", 
+    "_name", 
+    "_imageUrl", 
     []
   );
 
@@ -95,21 +179,16 @@ class Parts {
   // private constructor to avoid multiple instances
   Parts._privateConstructor() {
     // spare-parts
-    _partsList.add(_part1);
-    _partsList.add(_part2);
-    _partsList.add(_part3);
-    _partsList.add(_part4);
-    _partsList.add(_part5);
-    _partsList.add(_part6);
+    _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenSeal, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE
 
-    _product1.addListOfSpareParts([_part1, _part2]);
-    _product2.addListOfSpareParts([_part3, _part2, _part5]);
-    _product3.addListOfSpareParts([_part1, _part4, _part6, _part2]);
+    _mattradition.addListOfSpareParts([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenShelf]);
+    _kolstan.addListOfSpareParts([_masterCableClamp, _alimGeneratore]);
+    //_pinntorp.addListOfSpareParts([_longScew, _woodStickThing, _hexnut, _metalBendThing]);
 
-    _productList.addAll([_product1, _product2, _product3]);
+    _productList.addAll([_mattradition, _kolstan]);
   }
   List<SparePart> getSpareParts() => _partsList;
   List<Product> getProducts() => _productList;

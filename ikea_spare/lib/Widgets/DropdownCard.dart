@@ -42,7 +42,8 @@ class _CardWidgetState extends State<DropdownCard> {
                       topLeft: Radius.circular(10.0),
                       topRight: Radius.circular(10.0),
                     ) // Top corners rounded when expanded
-                  : BorderRadius.circular(10.0), // All corners rounded when collapsed
+                  : BorderRadius.circular(
+                      10.0), // All corners rounded when collapsed
               boxShadow: const [
                 BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0)),
               ],
@@ -74,7 +75,6 @@ class _CardWidgetState extends State<DropdownCard> {
                   border: Border.all(
                     color: const Color.fromARGB(
                         255, 131, 181, 223), // Blue color for the border
-                    width: 5.0, // Border width
                   ),
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(14.0),
@@ -90,8 +90,6 @@ class _CardWidgetState extends State<DropdownCard> {
                       bottomRight: Radius.circular(8.0),
                     ), // Inner container border radius
                   ),
-                  padding:
-                      const EdgeInsets.all(8.0), // Padding inside the grey area
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: parts.map((e) {

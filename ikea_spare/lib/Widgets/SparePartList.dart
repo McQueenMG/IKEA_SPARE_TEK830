@@ -27,8 +27,7 @@ import 'package:ikea_spare/Backend/SearchFilter.dart';
       itemBuilder: (_, index) {
         return Column(
           children: [
-            if (index < products.length)
-              DropdownCard(product: products[index]),
+            if (index < products.length) DropdownCard(product: products[index]),
           ],
         );
       },

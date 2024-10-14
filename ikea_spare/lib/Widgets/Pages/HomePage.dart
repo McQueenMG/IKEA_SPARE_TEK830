@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/ScannedPart.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
+import 'package:ikea_spare/Widgets/FilterButton.dart';
+import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -14,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
+  Filter selectedFilter = Filter.All; // Default filter set to "All"
 
   void _onSearchChanged(String searchText) {
     setState(() {
@@ -21,16 +25,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  int _counter = 0;
-
-  void _incrementCounter() {
+  void _onFilterChanged(Filter newFilter) {
     setState(() {
-      _counter++;
+      selectedFilter = newFilter;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
@@ -47,16 +52,30 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 16.0, right: 16.0), // Adjust padding as needed
+            SizedBox(
+              width: 400,
+              height: 100,
+              child: FilterButton(
+                selectedFilter: selectedFilter,
+                onFilterChanged: _onFilterChanged,
+              ),
+            ),
+            Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: 600,
-                    height: 565,
-                    child: SparePartList().getListWidget(),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.5,
+                        maxHeight: height,
+                      ),
+                      child: SparePartList(
+                        filter: selectedFilter,
+                        searchText: _searchText,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -71,11 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
+

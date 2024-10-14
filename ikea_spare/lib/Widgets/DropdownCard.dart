@@ -76,10 +76,6 @@ class _CardWidgetState extends State<DropdownCard> {
                     color: const Color.fromARGB(
                         255, 131, 181, 223), // Blue color for the border
                   ),
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(14.0),
-                    bottomRight: Radius.circular(14.0),
-                  ), // Rounded corners only at the bottom
                 ),
                 child: Container(
                   decoration: const BoxDecoration(

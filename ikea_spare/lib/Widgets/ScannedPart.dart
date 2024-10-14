@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Backend/Parts.dart';
+import 'package:ikea_spare/Backend/SparePart.dart';
 
-class ScannedPart extends StatelessWidget {
-
-  const ScannedPart({super.key, required this.name, required this.image, required this.quantity});
-
+class ScannedPart extends StatefulWidget {
   final String name;
   final String image;
   final int quantity;
-  static int tmp=0;
 
+  ScannedPart({super.key, required this.name, required this.image, required this.quantity});
 
-  //@override
-  //State<ScannedPart> createState() => ScannedPartState();
+  @override
+  State<ScannedPart> createState() => _ScannedPartState();
+}
+
+class _ScannedPartState extends State<ScannedPart> {
+  static int tmp = 0;
+  Parts partsInstance = Parts();
+
+  @override
+  void initState() {
+    super.initState();
+    tmp = widget.quantity; // Initialize tmp with the provided quantity
+  }
 
   @override
   Widget build(BuildContext context) {
+    List<SparePart> parts = partsInstance.getSpareParts();
+
     return SizedBox(
       width: double.infinity,
       height: 150,
@@ -26,50 +38,48 @@ class ScannedPart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-               height: 40,
-               width: 100,
-               child:ElevatedButton(
-                onPressed: decrease,
-                child: const Text("Remove"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red
+                height: 40,
+                width: 100,
+                child: ElevatedButton(
+                  onPressed: () {
+                    updateQuantity(parts, parts[1].getId, 5); // Updated method call
+                  },
+                  child: const Text("Remove"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
                 ),
               ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               Container(
                 decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(10),
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child:SizedBox(
-                width: 40,
-                height: 40,
-                child:Center(
-                  child:Card(
-                    color: Colors.blue,
-                    child:Text(tmp.toString()),
-                  )
-                )
+                child: SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: Center(
+                    child: Card(
+                      color: Colors.blue,
+                      child: Text(tmp.toString()),
+                    ),
+                  ),
+                ),
               ),
-              ),
-                SizedBox(
-                width: 10,
-              ),
+              const SizedBox(width: 10),
               SizedBox(
                 height: 40,
                 width: 100,
-                child:ElevatedButton(  
-                onPressed: increase,
-                child: const Text("Add"),
+                child: ElevatedButton(
+                  onPressed: increase,
+                  child: const Text("Add"),
                   style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green
-                ), ),
+                    backgroundColor: Colors.green,
+                  ),
                 ),
-
-              ],
+              ),
+            ],
           ),
         ],
       ),
@@ -77,13 +87,20 @@ class ScannedPart extends StatelessWidget {
   }
 
   void increase() {
-    tmp++;
+    setState(() {
+      tmp++;
+    });
   }
-    void decrease() {
-    tmp--;
-  }
-  void getQuantity(){
-    tmp = quantity;
 
+  void updateQuantity(List<SparePart> parts, String id, int newQuantity) {
+    setState(() {
+      for (var part in parts) {
+        if (part.getId == id) {
+          print("Old quantity: ${part.getQuantity.value}");
+          part.getQuantity.value = newQuantity; // Set the new value directly
+          print("New quantity: ${part.getQuantity.value}");
+        }
+      }
+    });
   }
 }

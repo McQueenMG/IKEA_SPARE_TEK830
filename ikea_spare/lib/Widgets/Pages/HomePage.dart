@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
+import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
+import 'package:ikea_spare/Widgets/FilterButton.dart';
+import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -13,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
+  Filter selectedFilter = Filter.All; // Default filter set to "All"
 
   void _onSearchChanged(String searchText) {
     setState(() {
@@ -20,13 +25,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  double width = 0;
-  double height = 0;
+  void _onFilterChanged(Filter newFilter) {
+    setState(() {
+      selectedFilter = newFilter;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.sizeOf(context).width;
-    height = MediaQuery.sizeOf(context).height;
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -41,7 +49,55 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
               child: CustomSearchBar(onSearch: _onSearchChanged),
             ),
+            SizedBox(
+              width: 400,
+              height: 100,
+              child: FilterButton(
+                selectedFilter: selectedFilter,
+                onFilterChanged: _onFilterChanged,
+              ),
+            ),
             Flexible(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.5,
+                        maxHeight: 40,
+                      ),
+                      child: const SparePartListHeader(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                maxWidth: width * 0.5,
+                                maxHeight: height * 0.1,
+                              ),
+                              child: const Divider(
+                      thickness: 0.1,
+                      color: Colors.black,
+                      height: 5,
+                    ),
+                            ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              flex: 10,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -52,7 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxWidth: width * 0.5,
                         maxHeight: height,
                       ),
-                      child: SparePartList().getListWidget(),
+                      child: SparePartList(
+                        filter: selectedFilter,
+                        searchText: _searchText,
+                      ),
                     ),
                   ),
                 ],
@@ -64,3 +123,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+

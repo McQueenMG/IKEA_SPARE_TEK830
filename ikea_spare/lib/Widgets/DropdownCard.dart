@@ -37,7 +37,13 @@ class _CardWidgetState extends State<DropdownCard> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 131, 181, 223),
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: _showData
+                  ? const BorderRadius.only(
+                      topLeft: Radius.circular(10.0),
+                      topRight: Radius.circular(10.0),
+                    ) // Top corners rounded when expanded
+                  : BorderRadius.circular(
+                      10.0), // All corners rounded when collapsed
               boxShadow: const [
                 BoxShadow(color: Colors.grey, offset: Offset(0.0, 3.0)),
               ],
@@ -51,12 +57,10 @@ class _CardWidgetState extends State<DropdownCard> {
                   Image.network(
                     widget.product.getImageUrl,
                     width: 40.0,
-                    height: 40.0, 
-                    fit: BoxFit.cover, 
+                    height: 40.0,
+                    fit: BoxFit.cover,
                   ),
-                  const SizedBox(
-                      width:
-                          10.0),
+                  const SizedBox(width: 10.0),
                   // Title text
                   Text(widget.product.getName),
                 ],
@@ -66,15 +70,28 @@ class _CardWidgetState extends State<DropdownCard> {
         ),
         // The expandable content (spare parts list)
         _showData
-            ? Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: parts.map((e) {
-                  return ListCard(
-                    part: e,
-                  );
-                }).toList(),
+            ? Container(
+
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 131, 181,
+                        223), // Blue background inside the border
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(8.0),
+                      bottomRight: Radius.circular(8.0),
+                    ), // Inner container border radius
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: parts.map((e) {
+                      return ListCard(
+                        part: e,
+                      );
+                    }).toList(),
+                  ),
+                ),
               )
-            : const SizedBox(), // Else, show nothing
+            : const SizedBox(),
       ],
     );
   }

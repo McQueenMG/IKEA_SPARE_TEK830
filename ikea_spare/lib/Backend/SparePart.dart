@@ -18,7 +18,7 @@ class SparePart {
   String get getLocation => _location;
 
   void setQuantity(int quantity) {
-    this._quantity = quantity;
+    _quantity = quantity;
   }
   
 }

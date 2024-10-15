@@ -7,7 +7,7 @@ class ListCard extends StatelessWidget {
   final SparePart part;
   final Color backgroundColor;
 
-  final double cardHeight = 90;
+  final double cardHeight = 70;
   final int maxLines = 3;
 
   @override
@@ -17,15 +17,17 @@ class ListCard extends StatelessWidget {
       height: cardHeight,
       child: Card(
         color: backgroundColor,
+        shape: const LinearBorder(),
+        margin: const EdgeInsets.only(top: 0, bottom: 0, left: 5, right: 5),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(6),
-              width: 90, // Fixed width for the image
-              height: double.infinity, // Fixed height for the image
+              padding: const EdgeInsets.all(4),
+              width: cardHeight,
+              height: double.infinity,
               child: Image.network(
                 part.getImageUrl,
-                fit: BoxFit.cover, // Adjust to cover the container
+                fit: BoxFit.cover,
               ),
             ),
             Expanded(

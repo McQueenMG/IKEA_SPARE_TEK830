@@ -103,7 +103,7 @@ class _CardWidgetState extends State<DropdownCard> {
     if(i % 2 == 0) {
       return Colors.lightBlue[50]!;
     } else {
-      return Colors.lightBlue[100]!;
+      return Colors.grey[50]!;
     }
   }
 }

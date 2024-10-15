@@ -129,7 +129,7 @@ class Parts {
   );
 
   // PINNTORP
-  SparePart _longScew = SparePart(
+  SparePart _longScew = SparePart( 
     "10056782", 
     "", 
     "", 
@@ -165,27 +165,83 @@ class Parts {
     "10:9:1"
   );
 
+  SparePart _handScrew = SparePart(
+    "10083377", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10083377.png", 
+    19, 
+    "10:9:1"
+  );
+
+  SparePart _dowl = SparePart(
+    "101350", 
+    "Wooden dowl", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/101350.png", 
+    37, 
+    "10:9:1"
+  );
+
+  SparePart _metalCornerThing = SparePart(
+    "102646", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/102646.png", 
+    47, 
+    "10:9:1"
+  );
+
+  // RENGÖRA
+
+  SparePart _cutleryTray = SparePart(
+    "H321279", 
+    "Cutlery Tray (3-pieces) Medium", 
+    "replaces: #9522126 C00257140 482000023046 CUTLERY BASKET GREY\nreplaces: #F550224 C00301361 482000032215 CUTLERY TRAY\nreplaces: #W332637 CUTLERY BASKET ALTERNATIVE FOR WHIRLPOOL/INDESIT 482000023046 C00257140\nThis article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
+    "https://cdn.fixpart.net/5664760/a5a252df92b112f029c2eaf8ad6718a2.jpg", 
+    3, 
+    "10:9:1"
+  );
+
+  SparePart _railBackStop = SparePart(
+    "H430725", 
+    "Rail Back Stop Dark Gray", 
+    "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
+    "https://cdn.fixpart.net/90077884/e2c9556a726c7a96a1996ab9e8cbd8e5.jpg", 
+    10, 
+    "10:9:1"
+  );
+
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   Product _mattradition = Product(
     "80411724", 
     "MATTRADITION", 
     "https://www.ikea.com/se/sv/images/products/mattradition-varmluftsugn-ikea-300-svart__0754906_pe748163_s5.jpg?f=xl", 
-    []
   );
 
   Product _kolstan = Product(
     "80559466", 
     "KOLSTAN", 
     "https://www.ikea.com/se/sv/images/products/kolstan-induktionshaell-ikea-500-svart__1225063_pe915121_s5.jpg?f=xl", 
-    []
   );
 
-  Product _pinntorp = Product(
+  Product _pinntorpTable = Product(
     "10529468", 
-    "PINNTORP", 
+    "PINNTORP Table", 
     "https://www.ikea.com/jp/en/images/products/pinntorp-table-light-brown-stained-white-stained__1118109_pe872932_s5.jpg?f=xl", 
-    []
+  );
+
+  Product _pinntorpChair = Product(
+    "00529483", 
+    "PINNTORP Chair", 
+    "https://www.ikea.com/jp/en/images/products/pinntorp-chair-light-brown-stained-katorp-natural__1343438_pe949584_s5.jpg?f=xl", 
+  );
+
+  Product _rengora = Product(
+    "40475572", 
+    "RENGÖRA", 
+    "https://www.ikea.com/se/sv/images/products/rengoera-integrerad-diskmaskin-ikea-300__0846411_pe779069_s5.jpg?f=xl"
   );
 
   static List<SparePart> _partsList = List.empty(growable: true);
@@ -197,16 +253,19 @@ class Parts {
   // private constructor to avoid multiple instances
   Parts._privateConstructor() {
     // spare-parts
-    _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenSeal, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing]);
+    _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenSeal, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing, _handScrew, _dowl, _metalCornerThing,
+                       _cutleryTray, _railBackStop]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE
 
     _mattradition.addListOfSpareParts([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenShelf]);
     _kolstan.addListOfSpareParts([_masterCableClamp, _alimGeneratore]);
-    _pinntorp.addListOfSpareParts([_longScew, _woodStickThing, _hexnut, _metalBendThing]);
+    _pinntorpTable.addListOfSpareParts([_longScew, _woodStickThing, _hexnut, _metalBendThing]);
+    _pinntorpChair.addListOfSpareParts([_handScrew, _dowl, _metalCornerThing]);
+    _rengora.addListOfSpareParts([_cutleryTray, _railBackStop]);
 
-    _productList.addAll([_mattradition, _kolstan, _pinntorp]);
+    _productList.addAll([_mattradition, _kolstan, _pinntorpTable, _pinntorpChair, _rengora]);
   }
   List<SparePart> getSpareParts() => _partsList;
   List<Product> getProducts() => _productList;

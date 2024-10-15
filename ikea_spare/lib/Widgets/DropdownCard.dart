@@ -86,6 +86,7 @@ class _CardWidgetState extends State<DropdownCard> {
                     children: parts.map((e) {
                       return ListCard(
                         part: e,
+                        backgroundColor: getBackgroundColor(),
                       );
                     }).toList(),
                   ),
@@ -94,5 +95,15 @@ class _CardWidgetState extends State<DropdownCard> {
             : const SizedBox(),
       ],
     );
+  }
+
+  int i = 0;
+  Color getBackgroundColor() {
+    i++;
+    if(i % 2 == 0) {
+      return Colors.lightBlue[50]!;
+    } else {
+      return Colors.lightBlue[100]!;
+    }
   }
 }

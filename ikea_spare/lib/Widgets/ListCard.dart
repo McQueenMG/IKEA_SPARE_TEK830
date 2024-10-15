@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
 class ListCard extends StatelessWidget {
-  const ListCard({super.key, required this.part});
+  const ListCard({super.key, required this.part, required this.backgroundColor});
 
   final SparePart part;
+  final Color backgroundColor;
 
   final double cardHeight = 90;
   final int maxLines = 3;
@@ -15,7 +16,7 @@ class ListCard extends StatelessWidget {
       width: double.infinity,
       height: cardHeight,
       child: Card(
-        color: Colors.lightBlue[50],
+        color: backgroundColor,
         child: Row(
           children: [
             Container(

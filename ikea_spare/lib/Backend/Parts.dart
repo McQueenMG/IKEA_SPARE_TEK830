@@ -288,6 +288,129 @@ class Parts {
     "10:9:1"
   );
 
+  // TILLREDA
+
+  SparePart _glassTurntable = SparePart(
+    "Q96912", 
+    "Glass Turntable", 
+    "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
+    "https://cdn.fixpart.net/90121712/335a1e1ba4377dad6e19280802e00260.jpg", 
+    23, 
+    "10:9:1"
+  );
+
+  SparePart _latchSpring = SparePart(
+    "Q142032", 
+    "Latch Spring", 
+    "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
+    "https://cdn.fixpart.net/90181588/acd5fb3133ec0fc3b286a39d8322719f.jpg", 
+    34, 
+    "10:9:1"
+  );
+
+  SparePart _swivelAssembly = SparePart(
+    "Q96889", 
+    "Swivel Assembly", 
+    "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
+    "https://cdn.fixpart.net/90127893/dffe2c9b75ef7eba9c63e8aba7363642.jpg", 
+    54, 
+    "10:9:1"
+  );
+
+  SparePart _foot = SparePart(
+    "Q96895", 
+    "Foot", 
+    "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
+    "https://cdn.fixpart.net/90169530/68e2293d4a11458c92dc94dff710f8b7.jpg", 
+    76, 
+    "10:9:1"
+  );
+
+  SparePart _coupler = SparePart(
+    "Q189653", 
+    "Coupler", 
+    "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
+    "https://cdn.fixpart.net/308776894/a40fdb666dabbe98fec5b96f367bea92.jpg", 
+    82, 
+    "10:9:1"
+  );
+
+  // LÅNGUDDEN
+
+  SparePart _drainPipeThing = SparePart(
+    "148962",
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/148962.png", 
+    6, 
+    "10:9:1"
+  );
+
+  SparePart _plank = SparePart(
+    "10107966", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10107966.png", 
+    10, 
+    "10:9:1"
+  );
+
+  SparePart _attachToStuff = SparePart(
+    "109184", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/109184.png", 
+    20, 
+    "10:9:1"
+  );
+
+  SparePart _otherAttachThing = SparePart(
+    "110385", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/110385.png", 
+    15, 
+    "10:9:1"
+  );
+
+  // GLITTRAN
+
+  SparePart _waterFilterThing = SparePart(
+    "10004087", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10004087.png", 
+    4, 
+    "10:9:1"
+  );
+
+  SparePart _metalRod = SparePart(
+    "10079215", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10079215.png", 
+    41, 
+    "10:9:1"
+  );
+
+  SparePart _triangleThing = SparePart(
+    "120087", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/120087.png", 
+    3, 
+    "10:9:1"
+  );
+
+  SparePart _screwDriverThing = SparePart(
+    "126908", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png", 
+    7, 
+    "10:9:1"
+  );
+
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   Product _mattradition = Product(
@@ -322,7 +445,7 @@ class Parts {
 
   Product _lagan = Product(
     "20388967", 
-    "LAGAN", 
+    "LAGAN Extractor fan", 
     "https://www.ikea.com/se/sv/images/products/lagan-vaeggmonterad-koeksflaekt-rostfritt-stal__0755560_pe748459_s5.jpg?f=xl"
   );
 
@@ -330,6 +453,24 @@ class Parts {
     "10568068", 
     "VINDÅS", 
     "https://www.ikea.com/se/sv/images/products/vindas-kyl-frysskap-ikea-300-fristaende-rostfritt-stalfaerg__1201509_pe905678_s5.jpg?f=xl"
+  );
+
+  Product _tillreda = Product(
+    "50486792", 
+    "TILLREDA", 
+    "https://www.ikea.com/se/sv/images/products/tillreda-mikrovagsugn-vit__0912596_pe783444_s5.jpg?f=xl"
+  );
+
+  Product _langudden = Product(
+    "89157479", 
+    "LÅNGUDDEN", 
+    "https://www.ikea.com/jp/en/images/products/langudden-inset-sink-1-bowl-stainless-steel__0754640_pe748000_s5.jpg?f=xl"
+  );
+
+  Product _glittran = Product(
+    "305.199.39", 
+    "GLITTRAN", 
+    "https://www.ikea.com/jp/en/images/products/glittran-kitchen-mixer-tap-brushed-black-metal__0831970_pe777539_s5.jpg?f=xl"
   );
 
   static List<SparePart> _partsList = List.empty(growable: true);
@@ -342,7 +483,9 @@ class Parts {
   Parts._privateConstructor() {
     // spare-parts
     _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenSeal, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing, _handScrew, _dowl, _metalCornerThing,
-                       _cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter, _carbonFilter, _controlPanel, _metalGreaseFilter, _lowerHingeAssembly, _crisperBox, _screw]);
+                       _cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter, _carbonFilter, _controlPanel, _metalGreaseFilter, _lowerHingeAssembly, _crisperBox, _screw,
+                       _glassTurntable, _latchSpring, _swivelAssembly, _foot, _coupler, _drainPipeThing, _plank, _attachToStuff, _otherAttachThing, _waterFilterThing, _metalRod,
+                       _triangleThing, _screwDriverThing]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE
@@ -354,8 +497,11 @@ class Parts {
     _rengora.addListOfSpareParts([_cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter]);
     _lagan.addListOfSpareParts([_carbonFilter, _controlPanel, _metalGreaseFilter]);
     _vindas.addListOfSpareParts([_lowerHingeAssembly, _crisperBox, _screw]);
+    _tillreda.addListOfSpareParts([_glassTurntable, _latchSpring, _swivelAssembly, _foot, _coupler]);
+    _langudden.addListOfSpareParts([_drainPipeThing, _plank, _attachToStuff, _otherAttachThing]);
+    _glittran.addListOfSpareParts([_waterFilterThing, _metalRod, _triangleThing, _screwDriverThing]);
 
-    _productList.addAll([_mattradition, _kolstan, _pinntorpTable, _pinntorpChair, _rengora, _lagan, _vindas]);
+    _productList.addAll([_mattradition, _kolstan, _pinntorpTable, _pinntorpChair, _rengora, _lagan, _vindas, _tillreda, _langudden, _glittran]);
   }
   List<SparePart> getSpareParts() => _partsList;
   List<Product> getProducts() => _productList;

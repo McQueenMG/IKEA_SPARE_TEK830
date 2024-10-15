@@ -212,6 +212,82 @@ class Parts {
     "10:9:1"
   );
 
+  SparePart _waterstopHoseLong = SparePart(
+    "G653888", 
+    "Inlet Hose Long Waterstop 1600mm", 
+    "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
+    "https://cdn.fixpart.net/218961/95fa4be334e2666b25c60fede5ed77cf.jpg", 
+    17, 
+    "10:9:1"
+  );
+
+  SparePart _microfilter = SparePart(
+    "9770023", 
+    "Microfilter", 
+    "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
+    "https://cdn.fixpart.net/172040/17bd5e6d5ad8984486ec5d3152f1ca69.jpg", 
+    26, 
+    "10:9:1"
+  );
+
+  // LAGAN
+
+  SparePart _carbonFilter = SparePart(
+    "G136854", 
+    "Carbon Filter", 
+    "replaces: #M443082 CFC0145233 NYTTIG FIL 900 N AKTIVKOHLEFILTER LONG.LIFE 48 MULT.24X1PZ KREA NG\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
+    "https://cdn.fixpart.net/90417999/d74ce1eefd10a85a12f74697835e2fdf.jpg", 
+    35, 
+    "10:9:1"
+  );
+
+  SparePart _controlPanel = SparePart(
+    "M132777", 
+    "Control Panel Assy", 
+    "replaces: #M461562 BE1BWA CONTROL PANEL PULS.MECC 4T 3V P4T3V (AKA)\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
+    "https://cdn.fixpart.net/90578775/763c2905e7bf82b2887c1e18c2d229f3.jpg", 
+    25, 
+    "10:9:1"
+  );
+
+  SparePart _metalGreaseFilter = SparePart(
+    "H992314", 
+    "Metallic Grease Filter", 
+    "replaces: #G334895 C00302744 488000302744 GREASE FILTER\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
+    "https://cdn.fixpart.net/90124634/8d8d6c1cca6780c86efb92a19b0b7f0f.jpg", 
+    50, 
+    "10:9:1"
+  );
+
+  // VINDÅS
+
+  SparePart _lowerHingeAssembly = SparePart(
+    "M300633", 
+    "Lower Hinge Assembly", 
+    "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
+    "https://cdn.fixpart.net/90152572/befa8fb926e88b9d272aa490b8012f94.jpg", 
+    76, 
+    "10:9:1"
+  );
+
+  SparePart _crisperBox = SparePart(
+    "M300623", 
+    "Crisper Box", 
+    "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
+    "https://cdn.fixpart.net/90152574/2f35ece4aefb1dc3db60d3dc7fdb6018.jpg",
+    45, 
+    "10:9:1"
+  );
+
+  SparePart _screw = SparePart(
+    "9426943", 
+    "Screw (m5x12)", 
+    "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
+    "https://cdn.fixpart.net/166073/d6a276139fe72e6fadd32afcfa989fe2.jpg", 
+    140, 
+    "10:9:1"
+  );
+
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   Product _mattradition = Product(
@@ -244,6 +320,18 @@ class Parts {
     "https://www.ikea.com/se/sv/images/products/rengoera-integrerad-diskmaskin-ikea-300__0846411_pe779069_s5.jpg?f=xl"
   );
 
+  Product _lagan = Product(
+    "20388967", 
+    "LAGAN", 
+    "https://www.ikea.com/se/sv/images/products/lagan-vaeggmonterad-koeksflaekt-rostfritt-stal__0755560_pe748459_s5.jpg?f=xl"
+  );
+
+  Product _vindas = Product(
+    "10568068", 
+    "VINDÅS", 
+    "https://www.ikea.com/se/sv/images/products/vindas-kyl-frysskap-ikea-300-fristaende-rostfritt-stalfaerg__1201509_pe905678_s5.jpg?f=xl"
+  );
+
   static List<SparePart> _partsList = List.empty(growable: true);
   static List<Product> _productList = List.empty(growable: true);
 
@@ -254,7 +342,7 @@ class Parts {
   Parts._privateConstructor() {
     // spare-parts
     _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _ovenSeal, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing, _handScrew, _dowl, _metalCornerThing,
-                       _cutleryTray, _railBackStop]);
+                       _cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter, _carbonFilter, _controlPanel, _metalGreaseFilter, _lowerHingeAssembly, _crisperBox, _screw]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE
@@ -263,9 +351,11 @@ class Parts {
     _kolstan.addListOfSpareParts([_masterCableClamp, _alimGeneratore]);
     _pinntorpTable.addListOfSpareParts([_longScew, _woodStickThing, _hexnut, _metalBendThing]);
     _pinntorpChair.addListOfSpareParts([_handScrew, _dowl, _metalCornerThing]);
-    _rengora.addListOfSpareParts([_cutleryTray, _railBackStop]);
+    _rengora.addListOfSpareParts([_cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter]);
+    _lagan.addListOfSpareParts([_carbonFilter, _controlPanel, _metalGreaseFilter]);
+    _vindas.addListOfSpareParts([_lowerHingeAssembly, _crisperBox, _screw]);
 
-    _productList.addAll([_mattradition, _kolstan, _pinntorpTable, _pinntorpChair, _rengora]);
+    _productList.addAll([_mattradition, _kolstan, _pinntorpTable, _pinntorpChair, _rengora, _lagan, _vindas]);
   }
   List<SparePart> getSpareParts() => _partsList;
   List<Product> getProducts() => _productList;

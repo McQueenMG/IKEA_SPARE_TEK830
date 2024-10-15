@@ -5,9 +5,9 @@ class Product {
   String _id;
   String _name;
   String _imageUrl;
-  List<SparePart> _spareParts;
+  List<SparePart> _spareParts = [];
 
-  Product(this._id, this._name, this._imageUrl, this._spareParts);
+  Product(this._id, this._name, this._imageUrl);
 
   String get getId => _id;
   String get getName => _name;

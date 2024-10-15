@@ -7,7 +7,7 @@ class ListCard extends StatelessWidget {
   final SparePart part;
   final Color backgroundColor;
 
-  final double cardHeight = 70;
+  final double cardHeight = 65;
   final int maxLines = 3;
 
   @override

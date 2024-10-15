@@ -18,7 +18,12 @@ class SparePart {
   String get getLocation => _location;
 
   void setQuantity(int quantity) {
-    _quantity = quantity;
+    if(quantity < 0) {
+      _quantity = 0;
+    }
+    else {
+      _quantity = quantity;
+    }
   }
   
 }

@@ -18,7 +18,11 @@ class ListCard extends StatelessWidget {
         color: Colors.lightBlue[50],
         child: Row(
           children: [
-            Container(
+            GestureDetector(
+              onTap: () {
+                setSparePart(part);
+              },
+            child:Container(
               padding: const EdgeInsets.all(6),
               width: 90, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
@@ -26,6 +30,7 @@ class ListCard extends StatelessWidget {
                 part.getImageUrl,
                 fit: BoxFit.cover, // Adjust to cover the container
               ),
+            ),
             ),
             Expanded(
               child: Row(
@@ -90,5 +95,9 @@ class ListCard extends StatelessWidget {
         ),
       ),
     );
+  }
+  void setSparePart(SparePart part) {
+
+
   }
 }

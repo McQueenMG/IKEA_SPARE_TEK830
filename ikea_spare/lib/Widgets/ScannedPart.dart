@@ -5,11 +5,13 @@ import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class ScannedPart extends StatefulWidget {
-  final SparePart part;
+  final ValueNotifier<int> partid;
+  //final SparePart part;
 
   ScannedPart({
     super.key,
-    required this.part,
+    required this.partid,
+    //required this.part,
   });
 
   @override
@@ -46,7 +48,7 @@ class _ScannedPartState extends State<ScannedPart> {
             Container(
               width: double.infinity,
               height: 100,
-              child: ListCard(part: parts[1]),
+              child: ListCard(part: parts[1], backgroundColor: Colors.lightBlue[50]!,),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

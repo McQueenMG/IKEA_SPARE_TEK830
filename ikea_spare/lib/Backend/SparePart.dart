@@ -7,7 +7,7 @@ class SparePart {
   String _name = "defaultName";
   String _description = "defaultDescription";
   String _imageUrl = "https://www.ikea.com/global/assets/logos/brand/ikea.svg";
-  int _quantity = 0;
+  ValueNotifier<int> _quantity = ValueNotifier<int>(0);
   String _location;
 
   SparePart(this._id, this._name, this._description, this._imageUrl, this._quantity, this._location);
@@ -16,12 +16,12 @@ class SparePart {
   String get getName => _name;
   String get getDescription => _description;
   String get getImageUrl => _imageUrl;
-  int get getQuantity => _quantity;
+  ValueNotifier<int> get getQuantity => _quantity;
   String get getLocation => _location;
 
-  void setQuantity(int quantity) {
-    if(quantity < 0) {
-      _quantity = 0;
+  void setQuantity(ValueNotifier<int> quantity) {
+    if(quantity.value < 0) {
+      _quantity = ValueNotifier<int>(0);
     }
     else {
       _quantity = quantity;

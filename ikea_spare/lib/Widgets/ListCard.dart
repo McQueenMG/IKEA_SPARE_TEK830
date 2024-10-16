@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
 class ListCard extends StatelessWidget {
-  const ListCard({super.key, required this.part});
+  const ListCard({super.key, required this.part, required this.backgroundColor});
 
   final SparePart part;
+  final Color backgroundColor;
 
-  final double cardHeight = 90;
+  final double cardHeight = 65;
   final int maxLines = 3;
 
   @override
@@ -15,7 +16,9 @@ class ListCard extends StatelessWidget {
       width: double.infinity,
       height: cardHeight,
       child: Card(
-        color: Colors.lightBlue[50],
+        color: backgroundColor,
+        shape: const LinearBorder(),
+        margin: const EdgeInsets.only(top: 0, bottom: 0, left: 5, right: 5),
         child: Row(
           children: [
             GestureDetector(
@@ -28,7 +31,7 @@ class ListCard extends StatelessWidget {
               height: double.infinity, // Fixed height for the image
               child: Image.network(
                 part.getImageUrl,
-                fit: BoxFit.cover, // Adjust to cover the container
+                fit: BoxFit.cover,
               ),
             ),
             ),

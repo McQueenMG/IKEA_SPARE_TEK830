@@ -124,12 +124,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 600,
                 height: 565,
                 child: ScannedPart(
-                    part: SparePart(
-                        "H191825",
-                        "Cap White",
-                        "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-                        "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
-                        ValueNotifier<int>(16)))),
+
+                    // part: SparePart(
+                    //     "H191825",
+                    //     "Cap White",
+                    //     "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
+                    //     "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
+                         //ValueNotifier<int>(16))
+                         )),
           ],
         ),
       ),

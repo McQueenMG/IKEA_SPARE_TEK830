@@ -5,11 +5,11 @@ import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class ScannedPart extends StatefulWidget {
-  final SparePart part;
+  final String id;
 
-  ScannedPart({
+  const ScannedPart({
     super.key,
-    required this.part,
+    required this.id,
   });
 
   @override
@@ -19,6 +19,7 @@ class ScannedPart extends StatefulWidget {
 class _ScannedPartState extends State<ScannedPart> {
   int? input;
   Parts partsInstance = Parts();
+
   // blah
   @override
   void initState() {
@@ -27,8 +28,7 @@ class _ScannedPartState extends State<ScannedPart> {
 
   @override
   Widget build(BuildContext context) {
-    List<SparePart> parts = partsInstance.getSpareParts();
-
+    SparePart part = partsInstance.getSparePartFromID(widget.id);
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
 
@@ -45,13 +45,14 @@ class _ScannedPartState extends State<ScannedPart> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: width*0.37,
+              width: width * 0.37,
               height: height / 8,
-              child: ListCard(part: parts[1]),
+              child:
+                  ListCard(part: part, backgroundColor: Colors.lightBlue[50]!),
             ),
             Padding(padding: EdgeInsets.only(top: 30)),
             Container(
-              width: width*0.37,
+              width: width * 0.37,
               height: height / 2,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -59,9 +60,9 @@ class _ScannedPartState extends State<ScannedPart> {
               ),
               child: Center(
                 child: Text(
-                  'Description: ${parts[1].getDescription}',
+                  'Description: ${part.getDescription}',
                   style: const TextStyle(fontSize: 20),
-                  textAlign: TextAlign.center,  
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -74,13 +75,14 @@ class _ScannedPartState extends State<ScannedPart> {
                   width: 100,
                   child: ElevatedButton(
                     onPressed: () {
-                      removeQuantity(
-                          parts, parts[1].getId);
+                      removeQuantity(part);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                     ),
-                    child: const Text("Remove", style: TextStyle(fontSize: 12, color: Colors.black), textAlign: TextAlign.center),
+                    child: const Text("Remove",
+                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        textAlign: TextAlign.center),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -93,22 +95,22 @@ class _ScannedPartState extends State<ScannedPart> {
                     width: 70,
                     height: 60,
                     child: Center(
-                        child: TextField(
-                          textAlign: TextAlign.center,
-                          decoration: const InputDecoration(                            
-                            contentPadding: EdgeInsets.only(left: 5),
-                            labelText: 'Quantity',
-                            labelStyle: TextStyle(fontSize: 12, color: Colors.black),
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: <TextInputFormatter>[
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          onChanged: (value) {
-                            input = int.tryParse(value);
-                          },
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(left: 5),
+                          labelText: 'Quantity',
+                          labelStyle:
+                              TextStyle(fontSize: 12, color: Colors.black),
                         ),
-                      
+                        keyboardType: TextInputType.number,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        onChanged: (value) {
+                          input = int.tryParse(value);
+                        },
+                      ),
                     ),
                   ),
                 ),
@@ -118,13 +120,14 @@ class _ScannedPartState extends State<ScannedPart> {
                   width: 100,
                   child: ElevatedButton(
                     onPressed: () {
-                      addQuantity(
-                          parts, parts[1].getId);
+                      addQuantity(part);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                     ),
-                    child: const Text("Add", style: TextStyle(fontSize: 12, color: Colors.black), textAlign: TextAlign.center),
+                    child: const Text("Add",
+                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        textAlign: TextAlign.center),
                   ),
                 ),
               ],
@@ -134,36 +137,25 @@ class _ScannedPartState extends State<ScannedPart> {
       ),
     );
   }
-  void removeQuantity(List<SparePart> parts, String id) {
+
+  void removeQuantity(SparePart part) {
     setState(() {
-      for (var part in parts) {
-        if (part.getId == id) {
-          if (input == null) {
-            return;
-          }
-          int tmp = part.getQuantity.value - input!;
-          if (tmp < 0) {
-            tmp = 0;
-          }
-          part.getQuantity.value = tmp;
-        }
+      if (input == null) {
+        return;
       }
+      int tmp = part.getQuantity.value - input!;
+      part.setQuantity(tmp);
     });
   }
-  void addQuantity(List<SparePart> parts, String id) {
+
+  void addQuantity(SparePart part) {
     setState(() {
-      for (var part in parts) {
-        if (part.getId == id) {
-          if (input == null) {
-            return;
-          }
-          int tmp = part.getQuantity.value + input!;
-          if (tmp < 0) {
-            tmp = 0;
-          }
-          part.getQuantity.value = tmp;
-        }
+      if (input == null) {
+        return;
       }
+      int tmp = part.getQuantity.value + input!;
+      part.setQuantity(tmp);
+      
     });
   }
 }

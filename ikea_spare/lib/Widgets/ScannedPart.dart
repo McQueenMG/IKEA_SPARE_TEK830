@@ -29,25 +29,43 @@ class _ScannedPartState extends State<ScannedPart> {
   Widget build(BuildContext context) {
     List<SparePart> parts = partsInstance.getSpareParts();
 
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+
     return SizedBox(
-      width: double.infinity,
-      height: 150,
+      width: width,
+      height: height,
       child: Container(
-        height: 250,
-        width: double.infinity / 1.5,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.black),
-          color: Colors.lightBlue[50],
+          color: Color.fromARGB(255, 131, 181, 223),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: double.infinity,
-              height: 100,
+              width: width*0.37,
+              height: height / 8,
               child: ListCard(part: parts[1]),
             ),
+            Padding(padding: EdgeInsets.only(top: 30)),
+            Container(
+              width: width*0.37,
+              height: height / 2,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.lightBlue[50],
+              ),
+              child: Center(
+                child: Text(
+                  'Description: ${parts[1].getDescription}',
+                  style: const TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,  
+                ),
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 15)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -57,18 +75,18 @@ class _ScannedPartState extends State<ScannedPart> {
                   child: ElevatedButton(
                     onPressed: () {
                       removeQuantity(
-                          parts, parts[1].getId); // Updated method call
+                          parts, parts[1].getId);
                     },
-                    child: const Text("Remove"),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                     ),
+                    child: const Text("Remove", style: TextStyle(fontSize: 12, color: Colors.black), textAlign: TextAlign.center),
                   ),
                 ),
                 const SizedBox(width: 10),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.yellow,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: SizedBox(
@@ -80,21 +98,14 @@ class _ScannedPartState extends State<ScannedPart> {
                           decoration: const InputDecoration(                            
                             contentPadding: EdgeInsets.only(left: 5),
                             labelText: 'Quantity',
-                            labelStyle: TextStyle(fontSize: 12),
+                            labelStyle: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           keyboardType: TextInputType.number,
                           inputFormatters: <TextInputFormatter>[
                             FilteringTextInputFormatter.digitsOnly
-                          ], // Only numbers can be entered
-
-                          //get input
+                          ],
                           onChanged: (value) {
-                            // Use tryParse to safely parse the input
                             input = int.tryParse(value);
-                            // Handle the case where the input is invalid
-                            if (input == null) {
-                              print('Invalid input: Not a valid integer');
-                            }
                           },
                         ),
                       
@@ -108,12 +119,12 @@ class _ScannedPartState extends State<ScannedPart> {
                   child: ElevatedButton(
                     onPressed: () {
                       addQuantity(
-                          parts, parts[1].getId); // Updated method call
+                          parts, parts[1].getId);
                     },
-                    child: const Text("Add"),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                     ),
+                    child: const Text("Add", style: TextStyle(fontSize: 12, color: Colors.black), textAlign: TextAlign.center),
                   ),
                 ),
               ],
@@ -127,10 +138,14 @@ class _ScannedPartState extends State<ScannedPart> {
     setState(() {
       for (var part in parts) {
         if (part.getId == id) {
-          print("Old quantity: ${part.getQuantity.value}");
+          if (input == null) {
+            return;
+          }
           int tmp = part.getQuantity.value - input!;
-          part.getQuantity.value = tmp; // Set the new value directly
-          print("New quantity: ${part.getQuantity.value}");
+          if (tmp < 0) {
+            tmp = 0;
+          }
+          part.getQuantity.value = tmp;
         }
       }
     });
@@ -139,11 +154,14 @@ class _ScannedPartState extends State<ScannedPart> {
     setState(() {
       for (var part in parts) {
         if (part.getId == id) {
-          print("Old quantity: ${part.getQuantity.value}");
+          if (input == null) {
+            return;
+          }
           int tmp = part.getQuantity.value + input!;
-          print(tmp);
-          part.getQuantity.value = tmp; // Set the new value directly
-          print("New quantity: ${part.getQuantity.value}");
+          if (tmp < 0) {
+            tmp = 0;
+          }
+          part.getQuantity.value = tmp;
         }
       }
     });

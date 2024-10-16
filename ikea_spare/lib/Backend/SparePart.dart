@@ -20,5 +20,4 @@ class SparePart {
   void setQuantity(ValueNotifier<int> quantity) {
     _quantity = quantity;
   }
-  
 }

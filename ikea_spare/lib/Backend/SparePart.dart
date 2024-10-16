@@ -8,16 +8,23 @@ class SparePart {
   String _description = "defaultDescription";
   String _imageUrl = "https://www.ikea.com/global/assets/logos/brand/ikea.svg";
   ValueNotifier<int> _quantity = ValueNotifier<int>(0);
+  String _location;
 
-  SparePart(this._id, this._name, this._description, this._imageUrl, this._quantity);
+  SparePart(this._id, this._name, this._description, this._imageUrl, this._quantity, this._location);
 
   String get getId => _id;
   String get getName => _name;
   String get getDescription => _description;
   String get getImageUrl => _imageUrl;
   ValueNotifier<int> get getQuantity => _quantity;
+  String get getLocation => _location;
 
   void setQuantity(ValueNotifier<int> quantity) {
-    _quantity = quantity;
+    if(quantity.value < 0) {
+      _quantity = ValueNotifier<int>(0);
+    }
+    else {
+      _quantity = quantity;
+    }
   }
 }

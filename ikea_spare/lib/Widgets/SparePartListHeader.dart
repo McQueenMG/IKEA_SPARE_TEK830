@@ -8,7 +8,7 @@ class SparePartListHeader extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 90, // Fixed width for the image
+          width: 65, // Fixed width for the image
         ),
         const Expanded(
           child: Padding(
@@ -21,7 +21,7 @@ class SparePartListHeader extends StatelessWidget {
             ),
           ),
         ),
-        const VerticalDivider(),
+        const VerticalDivider(width: 0),
         const Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
@@ -33,7 +33,7 @@ class SparePartListHeader extends StatelessWidget {
             ),
           ),
         ),
-        const VerticalDivider(),
+        const VerticalDivider(width: 0),
         const Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
@@ -45,7 +45,7 @@ class SparePartListHeader extends StatelessWidget {
             ),
           ),
         ),
-        const VerticalDivider(),
+        const VerticalDivider(width: 0),
         const Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 10.0, right: 10.0),

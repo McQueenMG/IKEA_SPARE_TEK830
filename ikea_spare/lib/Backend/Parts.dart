@@ -1,6 +1,7 @@
 
 // ignore_for_file: prefer_final_fields
 
+import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/Product.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 
@@ -22,7 +23,7 @@ class Parts {
       "Foot",
       "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
       "https://cdn.fixpart.net/126375/f1107baf9c6811d82078c4131e5a3d5c.jpg",
-      23,
+      ValueNotifier<int>(23),
       "10:9:1"
     );
 
@@ -31,7 +32,7 @@ class Parts {
       "Cap White",
       "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
       "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
-      16,
+      ValueNotifier<int>(16),
       "10:9:1"
     );
 
@@ -40,7 +41,7 @@ class Parts {
     "Ventilation Uc White Gw",
     "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/91543346/8ec4876ee019f7053530cd1b3d38b3d4.jpg",
-    5,
+    ValueNotifier<int>(5),
     "10:9:1"
   );
 
@@ -49,7 +50,7 @@ class Parts {
     "Freezer drawer",
     "Ersätter: #754487 C00341247 481941849693 DRAWER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/5120664/28cfba20b9f25a9d8d2020b17779536b.jpg",
-    1,
+    ValueNotifier<int>(1),
     "10:9:1"
   );
 
@@ -58,7 +59,7 @@ class Parts {
     "Spring Thermostat",
     "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
     "https://cdn.fixpart.net/44098/9ae8d67525cd434d33ee8750d93cb970.jpg",
-    1,
+    ValueNotifier<int>(1),
     "10:9:1"
   );
 
@@ -67,7 +68,7 @@ class Parts {
     "Dwb305, Cutlery Basket_cz E Gr H P Ro Sk",
     "Ersätter: #F468189 DWB303 484000001070 CUTLERY BASKET WPRO UNIVERSAL.\nErsätter: #G746692 C00380125 484000008561 DWB304, 2 IN 1 UNIVERSAL DISHWASHER CUTLERY BASKET 20X22X16,4CM\nDenna artikel är kompatibel / passar för modellen: DWF902W / IKEA",
     "https://cdn.fixpart.net/90161177/a0cdcb58e4e6dbba4fb783108eb0e6da.jpg",
-    1,
+    ValueNotifier<int>(1),
     "10:9:1"
   );
 
@@ -77,7 +78,7 @@ class Parts {
     "Oven Seal Std Materia", 
     "Ersätter: #H312064 C00385306 481010846713 DOOR SEAL\nErsätter: #X474268 OVEN DOOR GASKET ALTERNATIVE FOR BAUKNECHT 488000725238\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
     "https://cdn.fixpart.net/91464896/59a67f1f6c1db26be8e961f6d5a00f0c.jpg", 
-    1,
+    ValueNotifier<int>(1),
     "10:9:1"
   );
 
@@ -86,7 +87,7 @@ class Parts {
     "Baking Tray, Grey", 
     "Produktegenskaper\nBredd: 47,7 cm\nLängd: 37 cm\nHöjd: 2,3 cm\nMaterial: emaljerad\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
     "https://cdn.fixpart.net/90120553/7bda9c4efaa248e22d215aa530a7332f.jpg", 
-    2,
+    ValueNotifier<int>(2),
     "10:9:1"
   );
 
@@ -95,7 +96,7 @@ class Parts {
     "Inner Door Glass", 
     "Ersätter: #H315312 C00385305 481010826397 INNER DOOR GLASS\nErsätter: #Q118311 INNER DOOR GLASS ALTERNATIVE FOR WHIRLPOOL\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
     "https://cdn.fixpart.net/90742626/9b762bbedbc028d0ddcd2c2cc94b3000.jpg", 
-    3,
+    ValueNotifier<int>(3),
     "10:9:1"
   );
 
@@ -104,7 +105,7 @@ class Parts {
     "Oven Shelf 478.5 X 365 mm", 
     "Ersätter: #H314677 C00385308 481010828296 OVEN SHELF\nErsätter: #M302893 C00526696 488000526696 OVEN SHELF 478,5 X 365 MM\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA", 
     "https://cdn.fixpart.net/221927674/30cc0434fd96da22124c239e7d51b862.jpg", 
-    4,
+    ValueNotifier<int>(4),
     "10:9:1"
   );
 
@@ -115,7 +116,7 @@ class Parts {
     "Cable Clamp (for master)", 
     "Replaces: #U805310 133.0617.059 CABLE CLAMP (FOR MASTER) 75.177.63 / 01\n(This article is compatible / suitable for the model: KOLSTAN KOLSTAN / IKEA", 
     "https://cdn.fixpart.net/206979562/6d062ca2290c677d99ae6eeb4bd0fb11.jpg", 
-    5,
+    ValueNotifier<int>(5),
     "10:9:1"
   );
 
@@ -124,7 +125,7 @@ class Parts {
     "Coperchio Alim.generatore", 
     "This article is compatible / suitable for the model: KOLSTAN KOLSTAN / IKEA", 
     "https://cdn.fixpart.net/312448518/5b323db2d2aa31d77d3d36ad12344d77.jpg", 
-    6,
+    ValueNotifier<int>(6),
     "10:9:1"
   );
 
@@ -134,7 +135,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10056782.png", 
-    100,
+    ValueNotifier<int>(100),
     "10:9:1"
   );
 
@@ -143,7 +144,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/110912.png", 
-    75,
+    ValueNotifier<int>(75),
     "10:9:1"
   );
 
@@ -152,7 +153,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/100712.png", 
-    123,
+    ValueNotifier<int>(123),
     "10:9:1"
   );
 
@@ -161,7 +162,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/122483.png", 
-    23,
+    ValueNotifier<int>(23),
     "10:9:1"
   );
 
@@ -170,7 +171,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10083377.png", 
-    19, 
+    ValueNotifier<int>(19), 
     "10:9:1"
   );
 
@@ -179,7 +180,7 @@ class Parts {
     "Wooden dowl", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/101350.png", 
-    37, 
+    ValueNotifier<int>(37), 
     "10:9:1"
   );
 
@@ -188,7 +189,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/102646.png", 
-    47, 
+    ValueNotifier<int>(47), 
     "10:9:1"
   );
 
@@ -199,7 +200,7 @@ class Parts {
     "Cutlery Tray (3-pieces) Medium", 
     "replaces: #9522126 C00257140 482000023046 CUTLERY BASKET GREY\nreplaces: #F550224 C00301361 482000032215 CUTLERY TRAY\nreplaces: #W332637 CUTLERY BASKET ALTERNATIVE FOR WHIRLPOOL/INDESIT 482000023046 C00257140\nThis article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
     "https://cdn.fixpart.net/5664760/a5a252df92b112f029c2eaf8ad6718a2.jpg", 
-    3, 
+    ValueNotifier<int>(3), 
     "10:9:1"
   );
 
@@ -208,7 +209,7 @@ class Parts {
     "Rail Back Stop Dark Gray", 
     "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
     "https://cdn.fixpart.net/90077884/e2c9556a726c7a96a1996ab9e8cbd8e5.jpg", 
-    10, 
+    ValueNotifier<int>(10), 
     "10:9:1"
   );
 
@@ -217,7 +218,7 @@ class Parts {
     "Inlet Hose Long Waterstop 1600mm", 
     "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
     "https://cdn.fixpart.net/218961/95fa4be334e2666b25c60fede5ed77cf.jpg", 
-    17, 
+    ValueNotifier<int>(17), 
     "10:9:1"
   );
 
@@ -226,7 +227,7 @@ class Parts {
     "Microfilter", 
     "This article is compatible / suitable for the model: RENGÖRA 869991593340 / IKEA", 
     "https://cdn.fixpart.net/172040/17bd5e6d5ad8984486ec5d3152f1ca69.jpg", 
-    26, 
+    ValueNotifier<int>(26), 
     "10:9:1"
   );
 
@@ -237,7 +238,7 @@ class Parts {
     "Carbon Filter", 
     "replaces: #M443082 CFC0145233 NYTTIG FIL 900 N AKTIVKOHLEFILTER LONG.LIFE 48 MULT.24X1PZ KREA NG\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
     "https://cdn.fixpart.net/90417999/d74ce1eefd10a85a12f74697835e2fdf.jpg", 
-    35, 
+    ValueNotifier<int>(35), 
     "10:9:1"
   );
 
@@ -246,7 +247,7 @@ class Parts {
     "Control Panel Assy", 
     "replaces: #M461562 BE1BWA CONTROL PANEL PULS.MECC 4T 3V P4T3V (AKA)\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
     "https://cdn.fixpart.net/90578775/763c2905e7bf82b2887c1e18c2d229f3.jpg", 
-    25, 
+    ValueNotifier<int>(25), 
     "10:9:1"
   );
 
@@ -255,7 +256,7 @@ class Parts {
     "Metallic Grease Filter", 
     "replaces: #G334895 C00302744 488000302744 GREASE FILTER\nThis article is compatible / suitable for the model: LAGAN LAGAN / IKEA", 
     "https://cdn.fixpart.net/90124634/8d8d6c1cca6780c86efb92a19b0b7f0f.jpg", 
-    50, 
+    ValueNotifier<int>(50), 
     "10:9:1"
   );
 
@@ -266,7 +267,7 @@ class Parts {
     "Lower Hinge Assembly", 
     "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
     "https://cdn.fixpart.net/90152572/befa8fb926e88b9d272aa490b8012f94.jpg", 
-    76, 
+    ValueNotifier<int>(76), 
     "10:9:1"
   );
 
@@ -275,7 +276,7 @@ class Parts {
     "Crisper Box", 
     "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
     "https://cdn.fixpart.net/90152574/2f35ece4aefb1dc3db60d3dc7fdb6018.jpg",
-    45, 
+    ValueNotifier<int>(45), 
     "10:9:1"
   );
 
@@ -284,7 +285,7 @@ class Parts {
     "Screw (m5x12)", 
     "This article is compatible / suitable for the model: VINDÅS VINDÅS / IKEA", 
     "https://cdn.fixpart.net/166073/d6a276139fe72e6fadd32afcfa989fe2.jpg", 
-    140, 
+    ValueNotifier<int>(140), 
     "10:9:1"
   );
 
@@ -295,7 +296,7 @@ class Parts {
     "Glass Turntable", 
     "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
     "https://cdn.fixpart.net/90121712/335a1e1ba4377dad6e19280802e00260.jpg", 
-    23, 
+    ValueNotifier<int>(23), 
     "10:9:1"
   );
 
@@ -304,7 +305,7 @@ class Parts {
     "Latch Spring", 
     "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
     "https://cdn.fixpart.net/90181588/acd5fb3133ec0fc3b286a39d8322719f.jpg", 
-    34, 
+    ValueNotifier<int>(34), 
     "10:9:1"
   );
 
@@ -313,7 +314,7 @@ class Parts {
     "Swivel Assembly", 
     "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
     "https://cdn.fixpart.net/90127893/dffe2c9b75ef7eba9c63e8aba7363642.jpg", 
-    54, 
+    ValueNotifier<int>(54), 
     "10:9:1"
   );
 
@@ -322,7 +323,7 @@ class Parts {
     "Foot", 
     "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
     "https://cdn.fixpart.net/90169530/68e2293d4a11458c92dc94dff710f8b7.jpg", 
-    76, 
+    ValueNotifier<int>(76), 
     "10:9:1"
   );
 
@@ -331,7 +332,7 @@ class Parts {
     "Coupler", 
     "This article is compatible / suitable for the model: MM720CPM0E00 TILLREDA / IKEA", 
     "https://cdn.fixpart.net/308776894/a40fdb666dabbe98fec5b96f367bea92.jpg", 
-    82, 
+    ValueNotifier<int>(82), 
     "10:9:1"
   );
 
@@ -342,7 +343,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/148962.png", 
-    6, 
+    ValueNotifier<int>(6), 
     "10:9:1"
   );
 
@@ -351,7 +352,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10107966.png", 
-    10, 
+    ValueNotifier<int>(10), 
     "10:9:1"
   );
 
@@ -360,7 +361,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/109184.png", 
-    20, 
+    ValueNotifier<int>(20), 
     "10:9:1"
   );
 
@@ -369,7 +370,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/110385.png", 
-    15, 
+    ValueNotifier<int>(15), 
     "10:9:1"
   );
 
@@ -380,7 +381,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10004087.png", 
-    4, 
+    ValueNotifier<int>(4), 
     "10:9:1"
   );
 
@@ -389,7 +390,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/10079215.png", 
-    41, 
+    ValueNotifier<int>(41), 
     "10:9:1"
   );
 
@@ -398,7 +399,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/120087.png", 
-    3, 
+    ValueNotifier<int>(3), 
     "10:9:1"
   );
 
@@ -407,7 +408,7 @@ class Parts {
     "", 
     "", 
     "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png", 
-    7, 
+    ValueNotifier<int>(7), 
     "10:9:1"
   );
 

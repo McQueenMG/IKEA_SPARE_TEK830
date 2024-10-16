@@ -71,6 +71,7 @@ class _CardWidgetState extends State<DropdownCard> {
         // The expandable content (spare parts list)
         _showData
             ? Container(
+
                 child: Container(
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 131, 181,

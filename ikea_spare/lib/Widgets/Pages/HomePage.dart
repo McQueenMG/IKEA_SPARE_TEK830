@@ -47,12 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               SizedBox(
-                width: 600,
+                width: width * 0.5,
                 height: 50,
                 child: CustomSearchBar(onSearch: _onSearchChanged),
               ),
               SizedBox(
-                width: 400,
+                width: width * 0.4,
                 height: 100,
                 child: FilterButton(
                   selectedFilter: selectedFilter,
@@ -122,20 +122,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
             Flexible(
               child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const  EdgeInsets.all(10),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: width * 0.4,
-                      maxHeight: height * 0.81,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.4,
+                        maxHeight: height * 0.81,
+                      ),
+                      child: const ScannedPart(id: 'H982579'),
                     ),
-                    child: const ScannedPart(id: 'H982579'),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
           ],
         ),
       ),

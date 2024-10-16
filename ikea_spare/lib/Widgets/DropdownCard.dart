@@ -19,6 +19,8 @@ class _CardWidgetState extends State<DropdownCard> {
   bool _showData = false;
   Parts partsInstance = Parts();
 
+  final double bottomPadding = 5.0;
+
   @override
   Widget build(BuildContext context) {
     // Fetch the parts list
@@ -70,29 +72,43 @@ class _CardWidgetState extends State<DropdownCard> {
         ),
         // The expandable content (spare parts list)
         _showData
-            ? Container(
-
+            ? Padding(
+                padding: EdgeInsets.only(bottom: bottomPadding), // Padding below dropdown card
                 child: Container(
                   decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 131, 181,
-                        223), // Blue background inside the border
+                    color: Color.fromARGB(255, 131, 181, 223), // Blue background inside the border
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(8.0),
                       bottomRight: Radius.circular(8.0),
                     ), // Inner container border radius
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: parts.map((e) {
-                      return ListCard(
-                        part: e,
-                      );
-                    }).toList(),
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: bottomPadding),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: parts.map((e) {
+                        return ListCard(
+                          part: e,
+                          backgroundColor: getBackgroundColor(),
+                        );
+                      }).toList(),
+                    ),
                   ),
                 ),
               )
             : const SizedBox(),
+            if (!_showData) SizedBox(height: bottomPadding),
       ],
     );
+  }
+
+  int i = 0;
+  Color getBackgroundColor() {
+    i++;
+    if(i % 2 == 0) {
+      return Colors.lightBlue[50]!;
+    } else {
+      return Colors.grey[50]!;
+    }
   }
 }

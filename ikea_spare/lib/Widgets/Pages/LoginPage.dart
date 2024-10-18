@@ -10,8 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final String _userName = "ikea";
   final String _password = "123";
 
@@ -20,8 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     if(_usernameController.text == _userName && _passwordController.text == _password) {
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const MyHomePage(
-              title:
-                  'IKEA SPARE (Spare Parts acquisition and resource exchange)')
+              title:'IKEA SPARE (Spare Parts acquisition and resource exchange)')
       ));
       _passwordController.text = "";
     }
@@ -59,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                           
                             const Padding(
                               padding: EdgeInsets.fromLTRB(20, 0, 5, 0),
-                              child: Text("Username: "),
+                              child: Text("Username: ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
                             ),
 
                             Expanded(
@@ -82,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                           
                             const Padding(
                               padding: EdgeInsets.fromLTRB(20, 0, 6, 0),
-                              child: Text("Password: ")
+                              child: Text("Password: ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
                             ),
 
                             Expanded(
@@ -104,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: openHomePage,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(100, 0, 87, 173)),
-                          child: const Text("Login"),
+                          child: const Text("Login", style: TextStyle(color: Colors.white)),
                         ),
                       ),
                     ]

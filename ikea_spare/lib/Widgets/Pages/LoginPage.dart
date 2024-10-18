@@ -11,20 +11,27 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  final String _userName = "ikea";
+  final String _password = "123";
+
+
   void openHomePage() {
-    Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const MyHomePage(
-            title:
-                'IKEA SPARE (Spare Parts acquisition and resource exchange)')));
+    if(_usernameController.text == _userName && _passwordController.text == _password) {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const MyHomePage(
+              title:
+                  'IKEA SPARE (Spare Parts acquisition and resource exchange)')
+      ));
+      _passwordController.text = "";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
-
-    final String userName = "ikea";
-    final String password = "123";
 
     return Scaffold(
       appBar: AppBar(
@@ -58,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
 
                             Expanded(
                               child: TextField(
-                                controller: TextEditingController()..text = "Type your username here",
+                                controller: _usernameController,
                                 onChanged: (value) => {},
                               )
                             )
@@ -82,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                             Expanded(
                               child: TextField(
                                 obscureText: true,
-                                controller: TextEditingController()..text = "12345",
+                                controller: _passwordController,
                                 onChanged: (value) => {},
                               )
                             )

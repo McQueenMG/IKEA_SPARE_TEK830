@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: width * 0.05),
+            padding: EdgeInsets.only(right: width * 0.075),
             child: Row(
               children: [
                 IconButton(

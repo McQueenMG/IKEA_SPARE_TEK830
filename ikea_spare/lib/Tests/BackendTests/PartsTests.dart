@@ -68,7 +68,7 @@ void main() {
     test('should return null for non-existing product ID', () {
       Parts parts = Parts();
 
-      expect(parts.getProductFromID("invalidID"), throwsException);
+      expect(() => parts.getProductFromID("invalidID"), throwsA(isA<Exception>()));
     });
 
     test('should get spare part by ID', () {
@@ -81,7 +81,27 @@ void main() {
     test('should return null for non-existing spare part ID', () {
       Parts parts = Parts();
 
-      expect(parts.getSparePartFromID("invalidID"), throwsException);
+      expect(() => parts.getSparePartFromID("invalidID"), throwsA(isA<Exception>()));
+    });
+  });
+
+  group('Test with Mock Data', () {
+    Parts testParts;
+
+    setUp(() {
+      // Re-initialize or mock Parts instance before each test if needed
+      testParts = Parts(); // Accessing private constructor
+    });
+
+    test('should correctly add spare parts to product', () {
+      Product testProduct = Product("12345", "Test Product", "testImage.jpg");
+      SparePart testPart = SparePart("67890", "Test Spare Part", "testDescription", "testImage.jpg", ValueNotifier<int>(1), "10:9:1");
+
+      testProduct.addListOfSpareParts([testPart]);
+
+      expect(testProduct.getSpareParts.length, 1);
+      expect(testProduct.getSpareParts.first.getName, "Test Spare Part");
+      testProduct.removeListOfSpareParts([testPart]);
     });
   });
 }

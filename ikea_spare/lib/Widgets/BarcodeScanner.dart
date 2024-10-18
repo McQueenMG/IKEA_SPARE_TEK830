@@ -6,7 +6,7 @@ class SimpleBarcodeScannerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Simple Barcode Scanner'),
+        title: Text('Barcode Scanner'),
       ),
       body: MobileScanner(
         onDetect: (barcode, args) {

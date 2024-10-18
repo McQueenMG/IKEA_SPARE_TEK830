@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-    Future<void> _scanBarcode() async {
+  Future<void> _scanBarcode() async {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(

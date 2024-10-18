@@ -13,6 +13,7 @@ class SparePart {
   SparePart(this._id, this._name, this._description, this._imageUrl, this._quantity, this._location);
 
   String get getId => _id;
+  
   String get getName => _name;
   String get getDescription => _description;
   String get getImageUrl => _imageUrl;

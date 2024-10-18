@@ -5,8 +5,9 @@ import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class ScannedPart extends StatefulWidget {
-  final ValueNotifier<int> partid;
+  //final ValueNotifier<int> partid;
   //final SparePart part;
+  final String partid;
 
   ScannedPart({
     super.key,

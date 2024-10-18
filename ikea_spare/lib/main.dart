@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'IKEA SPARE (Spare Parts acquisition and resource exchange)'),
+      home: const MyHomePage(title: 'IKEA SPARE'),
     );
   }
 }

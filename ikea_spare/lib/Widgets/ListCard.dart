@@ -62,7 +62,7 @@ class ListCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Text(
-                        "temp",
+                        "temp", // Static text
                         maxLines: maxLines,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
@@ -73,11 +73,16 @@ class ListCard extends StatelessWidget {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                      child: Text(
-                        "${part.getQuantity.value}",
-                        maxLines: maxLines,
-                        overflow: TextOverflow.ellipsis,
-                        softWrap: false,
+                      child: ValueListenableBuilder<int>(
+                        valueListenable: part.getQuantity,
+                        builder: (context, quantity, _) {
+                          return Text(
+                            "$quantity", // Automatically updates the quantity
+                            maxLines: maxLines,
+                            overflow: TextOverflow.ellipsis,
+                            softWrap: false,
+                          );
+                        },
                       ),
                     ),
                   ),

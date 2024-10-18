@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ikea_spare/Widgets/Pages/HomePage.dart'; // Import the new file where the homepage logic is.
+import 'package:ikea_spare/Widgets/Pages/HomePage.dart';
+import 'package:ikea_spare/Widgets/Pages/LoginPage.dart'; // Import the new file where the homepage logic is.
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'IKEA SPARE (Spare Parts acquisition and resource exchange)'),
+      home: const LoginPage(title: 'IKEA SPARE (Spare Parts acquisition and resource exchange)'),
     );
   }
 }

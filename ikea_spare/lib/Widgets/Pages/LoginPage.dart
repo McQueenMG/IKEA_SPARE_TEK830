@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ikea_spare/Widgets/LoginButton.dart';
 import 'package:ikea_spare/Widgets/Pages/HomePage.dart';
 
 class LoginPage extends StatefulWidget {

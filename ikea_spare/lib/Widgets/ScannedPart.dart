@@ -57,7 +57,7 @@ class _ScannedPartState extends State<ScannedPart> {
                         fit: BoxFit.cover,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: EdgeInsets.all(height * 0.025),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -70,9 +70,9 @@ class _ScannedPartState extends State<ScannedPart> {
                               part.getId,
                               style: const TextStyle(fontSize: 16),
                             ),
-                            const Divider(
+                            Divider(
                               color: Colors.black,
-                              thickness: 2,
+                              height: height * 0.01,
                             ),
                             Row(
                               children: [
@@ -81,7 +81,7 @@ class _ScannedPartState extends State<ScannedPart> {
                                   color: Colors.black,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(height * 0.0125),
                                   child: Text(
                                     "Quantity: ${part.getQuantity.value}",
                                     style: const TextStyle(fontSize: 16),
@@ -96,7 +96,7 @@ class _ScannedPartState extends State<ScannedPart> {
                                   color: Colors.black,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(height * 0.0125),
                                   child: Text(
                                     "Location: ${part.getLocation}",
                                     style: const TextStyle(fontSize: 16),

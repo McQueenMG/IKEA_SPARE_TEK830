@@ -100,6 +100,7 @@ class ListCard extends StatelessWidget {
     );
   }
   void setSparePart(SparePart part) {
+    
 
 
   }

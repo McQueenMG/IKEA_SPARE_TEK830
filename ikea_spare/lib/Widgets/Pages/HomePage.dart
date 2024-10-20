@@ -126,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 600,
                 height: 565,
                 child: ScannedPart(
+                  partid: partid.toString(),
                   //partid: partid,
                     // part: SparePart(
                     //     "H191825",

@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => SimpleBarcodeScannerPage(),
+        builder: (context) => BarcodeScanner(),
       ),
     );
     if (result != null && result is String) {
@@ -87,7 +87,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onFilterChanged: _onFilterChanged,
                 ),
               ),
-              
+              Text(
+                'Scanned Barcode: $barcodeResult',
+                style: TextStyle(fontSize: 16, color: Colors.black),
+              ),
               Flexible(
                 flex: 1,
                 child: Row(

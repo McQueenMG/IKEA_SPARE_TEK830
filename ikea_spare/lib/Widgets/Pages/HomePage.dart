@@ -37,11 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => BarcodeScanner(), // Navigate to the BarcodeScanner widget
+        builder: (context) => BarcodeScanner(),
       ),
     );
-
-    // Handle the barcode result
     if (result != null && result is String) {
       setState(() {
         barcodeResult = result;

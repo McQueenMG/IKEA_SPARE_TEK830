@@ -45,18 +45,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         title: Text(widget.title),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: width * 0.075),
+            child: Row(
+              children: [
+                IconButton(
+                icon: const Icon(Icons.home_filled),
+                onPressed: () {},
+              ),
+
+              const Text(
+                'Kobe, Japan',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Row(
           children: [
             Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               SizedBox(
-                width: 600,
+                width: width * 0.5,
                 height: 50,
                 child: CustomSearchBar(onSearch: _onSearchChanged),
               ),
               SizedBox(
-                width: 400,
+                width: width * 0.4,
                 height: 100,
                 child: FilterButton(
                   selectedFilter: selectedFilter,

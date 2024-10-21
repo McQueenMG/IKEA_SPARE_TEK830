@@ -72,32 +72,30 @@ class _CardWidgetState extends State<DropdownCard> {
         ),
         // The expandable content (spare parts list)
         _showData
-            ? Padding(
-                padding: EdgeInsets.only(bottom: bottomPadding), // Padding below dropdown card
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 131, 181, 223), // Blue background inside the border
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(8.0),
-                      bottomRight: Radius.circular(8.0),
-                    ), // Inner container border radius
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: bottomPadding),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: parts.map((e) {
-                        return ListCard(
-                          part: e,
-                          backgroundColor: getBackgroundColor(),
-                        );
-                      }).toList(),
-                    ),
+            ? Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(
+                      255, 131, 181, 223), // Blue background inside the border
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(8.0),
+                    bottomRight: Radius.circular(8.0),
+                  ), // Inner container border radius
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: bottomPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: parts.map((e) {
+                      return ListCard(
+                        part: e,
+                        backgroundColor: getBackgroundColor(),
+                      );
+                    }).toList(),
                   ),
                 ),
               )
             : const SizedBox(),
-            if (!_showData) SizedBox(height: bottomPadding),
+        if (!_showData) SizedBox(height: bottomPadding),
       ],
     );
   }
@@ -105,7 +103,7 @@ class _CardWidgetState extends State<DropdownCard> {
   int i = 0;
   Color getBackgroundColor() {
     i++;
-    if(i % 2 == 0) {
+    if (i % 2 == 0) {
       return Colors.lightBlue[50]!;
     } else {
       return Colors.grey[50]!;

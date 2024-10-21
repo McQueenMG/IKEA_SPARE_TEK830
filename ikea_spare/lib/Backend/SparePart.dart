@@ -20,13 +20,12 @@ class SparePart {
   ValueNotifier<int> get getQuantity => _quantity;
   String get getLocation => _location;
 
-  void setQuantity(ValueNotifier<int> quantity) {
-    if(quantity.value < 0) {
-      _quantity = ValueNotifier<int>(0);
+  void setQuantity(int quantity) {
+    if(quantity < 0) {
+      _quantity.value = 0;
     }
     else {
-      _quantity = quantity;
+      _quantity.value = quantity;
     }
   }
-  
 }

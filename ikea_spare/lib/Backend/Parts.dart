@@ -15,55 +15,7 @@ import 'package:ikea_spare/Backend/SparePart.dart';
 class Parts {
   static final Parts _this = Parts._privateConstructor();
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  SparePart _part1 = SparePart(
-      "761310",
-      "Foot",
-      "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://cdn.fixpart.net/126375/f1107baf9c6811d82078c4131e5a3d5c.jpg",
-      ValueNotifier<int>(23),
-      "10:9:1");
-
-  SparePart _part2 = SparePart(
-      "H191825",
-      "Cap White",
-      "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
-      ValueNotifier<int>(16),
-      "10:9:1");
-
-  SparePart _part3 = SparePart(
-      "U232204",
-      "Ventilation Uc White Gw",
-      "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://cdn.fixpart.net/91543346/8ec4876ee019f7053530cd1b3d38b3d4.jpg",
-      ValueNotifier<int>(5),
-      "10:9:1");
-
-  SparePart _part4 = SparePart(
-      "7350424",
-      "Freezer drawer",
-      "Ersätter: #754487 C00341247 481941849693 DRAWER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://cdn.fixpart.net/5120664/28cfba20b9f25a9d8d2020b17779536b.jpg",
-      ValueNotifier<int>(1),
-      "10:9:1");
-
-  SparePart _part5 = SparePart(
-      "3091973",
-      "Spring Thermostat",
-      "Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-      "https://cdn.fixpart.net/44098/9ae8d67525cd434d33ee8750d93cb970.jpg",
-      ValueNotifier<int>(1),
-      "10:9:1");
-
-  SparePart _part6 = SparePart(
-      "G746691",
-      "Dwb305, Cutlery Basket_cz E Gr H P Ro Sk",
-      "Ersätter: #F468189 DWB303 484000001070 CUTLERY BASKET WPRO UNIVERSAL.\nErsätter: #G746692 C00380125 484000008561 DWB304, 2 IN 1 UNIVERSAL DISHWASHER CUTLERY BASKET 20X22X16,4CM\nDenna artikel är kompatibel / passar för modellen: DWF902W / IKEA",
-      "https://cdn.fixpart.net/90161177/a0cdcb58e4e6dbba4fb783108eb0e6da.jpg",
-      ValueNotifier<int>(1),
-      "10:9:1");
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   // MATTRADITION
   SparePart _ovenSeal = SparePart(
@@ -362,12 +314,13 @@ class Parts {
       "10:9:1");
 
   SparePart _screwDriverThing = SparePart(
-      "126908",
-      "",
-      "",
-      "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png",
-      ValueNotifier<int>(7),
-      "10:9:1");
+    "126908", 
+    "", 
+    "", 
+    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png", 
+    ValueNotifier<int>(7), 
+    "10:9:1"
+  );
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -422,43 +375,10 @@ class Parts {
   // private constructor to avoid multiple instances
   Parts._privateConstructor() {
     // spare-parts
-    _partsList.addAll([
-      _ovenSeal,
-      _bakingTray,
-      _innerDoorGlass,
-      _ovenSeal,
-      _masterCableClamp,
-      _longScew,
-      _woodStickThing,
-      _hexnut,
-      _metalBendThing,
-      _handScrew,
-      _dowl,
-      _metalCornerThing,
-      _cutleryTray,
-      _railBackStop,
-      _waterstopHoseLong,
-      _microfilter,
-      _carbonFilter,
-      _controlPanel,
-      _metalGreaseFilter,
-      _lowerHingeAssembly,
-      _crisperBox,
-      _screw,
-      _glassTurntable,
-      _latchSpring,
-      _swivelAssembly,
-      _foot,
-      _coupler,
-      _drainPipeThing,
-      _plank,
-      _attachToStuff,
-      _otherAttachThing,
-      _waterFilterThing,
-      _metalRod,
-      _triangleThing,
-      _screwDriverThing
-    ]);
+    _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing, _handScrew, _dowl, _metalCornerThing,
+                       _cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter, _carbonFilter, _controlPanel, _metalGreaseFilter, _lowerHingeAssembly, _crisperBox, _screw,
+                       _glassTurntable, _latchSpring, _swivelAssembly, _foot, _coupler, _drainPipeThing, _plank, _attachToStuff, _otherAttachThing, _waterFilterThing, _metalRod,
+                       _triangleThing, _screwDriverThing]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE

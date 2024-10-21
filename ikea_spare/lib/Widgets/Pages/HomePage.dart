@@ -6,6 +6,7 @@ import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 import 'package:ikea_spare/Widgets/FilterButton.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
+import 'package:ikea_spare/Backend/GlobalVariables.dart';
 
 
 
@@ -21,7 +22,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
   Filter selectedFilter = Filter.All; // Default filter set to "All"
-  //ValueNotifier<String> partid = ValueNotifier<String>("U232204");
   
 
   void _onSearchChanged(String searchText) {
@@ -128,15 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 600,
                 height: 565,
                 child: ScannedPart(
-                  //partid: partid.value,
-                    // part: SparePart(
-                    //     "H191825",
-                    //     "Cap White",
-                    //     "Ersätter: #759530 C00336008 481946248175 STOPPER. Denna artikel är kompatibel / passar för modellen: 00015068 / IKEA",
-                    //     "https://cdn.fixpart.net/90861849/ea5b7744ba89682e54e5e21b9a799f61.jpg",
-                    //      ValueNotifier<int>(16),
-                    //      "1,9,8",
-                    //      )
+
                          )),
           ],
         ),

@@ -3,12 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:ikea_spare/Backend/Parts.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
 import 'package:ikea_spare/Widgets/ListCard.dart';
+import 'package:ikea_spare/Backend/GlobalVariables.dart';
 
 class ScannedPart extends StatefulWidget {
   //final ValueNotifier<int> partid;
   //final SparePart part;
   //final String partid;
-  ValueNotifier<String> partid = ValueNotifier<String>("H982579");
   
 
   ScannedPart({
@@ -32,8 +32,9 @@ class _ScannedPartState extends State<ScannedPart> {
 
   @override
   Widget build(BuildContext context) {
+    String partid = Globalvariables().getPartIdValue();
     List<SparePart> parts = partsInstance.getSpareParts();
-    SparePart currentPart= partsInstance.getSparePartFromID(widget.partid.value);
+    SparePart currentPart= partsInstance.getSparePartFromID(partid);
 
     return SizedBox(
       width: double.infinity,
@@ -49,11 +50,11 @@ class _ScannedPartState extends State<ScannedPart> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ValueListenableBuilder(valueListenable: widget.partid, builder: (context, value, child) {
+            ValueListenableBuilder(valueListenable: Globalvariables().getPartId(), builder: (context, value, child) {
               return Container(
               width: double.infinity,
               height: 100,
-              child: ListCard(part: currentPart, backgroundColor: Colors.lightBlue[50]!,),
+              child: ListCard(part: partsInstance.getSparePartFromID(Globalvariables().getPartIdValue()), backgroundColor: Colors.lightBlue[50]!,),
             );
             }),
             Row(

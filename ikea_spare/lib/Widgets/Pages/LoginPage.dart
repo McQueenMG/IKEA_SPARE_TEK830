@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
   void _openHomePage() {
     Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const MyHomePage(
-              title:'IKEA SPARE (Spare Parts acquisition and resource exchange)')
+              title:'IKEA SPARE')
       ));
   }
 

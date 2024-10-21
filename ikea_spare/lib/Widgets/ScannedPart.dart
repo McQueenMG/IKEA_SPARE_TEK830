@@ -31,6 +31,7 @@ class _ScannedPartState extends State<ScannedPart> {
   @override
   Widget build(BuildContext context) {
     List<SparePart> parts = partsInstance.getSpareParts();
+    SparePart currentPart= partsInstance.getSparePartFromID(widget.partid);
 
     return SizedBox(
       width: double.infinity,
@@ -49,7 +50,7 @@ class _ScannedPartState extends State<ScannedPart> {
             Container(
               width: double.infinity,
               height: 100,
-              child: ListCard(part: parts[1], backgroundColor: Colors.lightBlue[50]!,),
+              child: ListCard(part: currentPart, backgroundColor: Colors.lightBlue[50]!,),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +61,7 @@ class _ScannedPartState extends State<ScannedPart> {
                   child: ElevatedButton(
                     onPressed: () {
                       removeQuantity(
-                          parts, parts[1].getId); // Updated method call
+                          parts, currentPart.getId); // Updated method call
                     },
                     child: const Text("Remove"),
                     style: ElevatedButton.styleFrom(
@@ -111,7 +112,7 @@ class _ScannedPartState extends State<ScannedPart> {
                   child: ElevatedButton(
                     onPressed: () {
                       addQuantity(
-                          parts, parts[1].getId); // Updated method call
+                          parts, currentPart.getId); // Updated method call
                     },
                     child: const Text("Add"),
                     style: ElevatedButton.styleFrom(

@@ -19,7 +19,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
   Filter selectedFilter = Filter.All; // Default filter set to "All"
-  ValueNotifier<String> partid = ValueNotifier<String>("");
+  ValueNotifier<String> partid = ValueNotifier<String>("U232204");
   
 
   void _onSearchChanged(String searchText) {
@@ -126,8 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 600,
                 height: 565,
                 child: ScannedPart(
-                  partid: partid.toString(),
-                  //partid: partid,
+                  partid: partid.value,
                     // part: SparePart(
                     //     "H191825",
                     //     "Cap White",

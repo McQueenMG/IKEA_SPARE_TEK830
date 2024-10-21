@@ -37,9 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => BarcodeScanner(),
+        builder: (context) => BarcodeScanner(), // Navigate to the BarcodeScanner widget
       ),
     );
+
+    // Handle the barcode result
     if (result != null && result is String) {
       setState(() {
         barcodeResult = result;
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Text(
                 'Scanned Barcode: $barcodeResult',
-                style: TextStyle(fontSize: 16, color: Colors.black),
+                style: TextStyle(fontSize: 16),
               ),
               Flexible(
                 flex: 1,

@@ -39,9 +39,7 @@ dependencies:
   mobile_scanner: ^6.0.1
   simple_barcode_scanner: ^0.1.1
   camera: ^0.11.0+2  # For camera access on Windows/macOS
-  image_picker: ^1.1.2  # (Optional) to pick images from the gallery
-  flutter_barcode_scanner: ^2.0.0  # For scanning barcodes (Mobile focus)
-  zxing2: ^0.2.3 # Or any available desktop-compatible library
+  flutter_barcode_sdk: 2.2.7  # For scanning barcodes (Mobile focus)
 
 dev_dependencies:
   flutter_test:

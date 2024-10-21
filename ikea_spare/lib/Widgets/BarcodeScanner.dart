@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:camera/camera.dart';  // Import Camera package
+import 'package:flutter_barcode_sdk/dynamsoft_barcode.dart';
+import 'package:flutter_barcode_sdk/flutter_barcode_sdk.dart';  // Import the Barcode SDK
 
-import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
-import 'package:flutter/foundation.dart'; // For platform checks
-import 'package:zxing/zxing.dart'; // A simple ZXing wrapper for barcode scanning
 
 class BarcodeScanner extends StatefulWidget {
   @override
@@ -15,7 +13,7 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
   CameraController? _controller;
   List<CameraDescription>? cameras;
   bool isCameraInitialized = false;
-  String barcodeResult = 'No barcode scanned';
+  bool isCapturing = false; // Flag to indicate if capture is in progress
 
   @override
   void initState() {
@@ -23,19 +21,15 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
     _initializeCamera();
   }
 
-  // Initialize camera depending on platform
   Future<void> _initializeCamera() async {
     try {
-      // Check if we're on macOS or Windows
-      if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.windows || defaultTargetPlatform == TargetPlatform.macOS)) {
-        cameras = await availableCameras();
-        if (cameras!.isNotEmpty) {
-          _controller = CameraController(cameras![0], ResolutionPreset.medium);
-          await _controller!.initialize();
-          setState(() {
-            isCameraInitialized = true;
-          });
-        }
+      cameras = await availableCameras();
+      if (cameras!.isNotEmpty) {
+        _controller = CameraController(cameras![0], ResolutionPreset.medium);
+        await _controller!.initialize();
+        setState(() {
+          isCameraInitialized = true;
+        });
       }
     } catch (e) {
       print('Error initializing camera: $e');
@@ -48,26 +42,37 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
     super.dispose();
   }
 
-  // Capturing a frame and scanning for a barcode
   Future<void> _scanBarcode() async {
-    if (_controller != null && _controller!.value.isInitialized) {
+    if (isCapturing) return; // Prevent double capture
+    if (_controller == null || !_controller!.value.isInitialized) {
+      print('Camera is not initialized');
+      return;
+    }
+
+    try {
+      setState(() {
+        isCapturing = true; // Start capture
+      });
+
       // Capture a frame from the camera
       final image = await _controller!.takePicture();
-      
-      // Process the image and scan for barcodes
-      final barcodeScanner = ZXing();  // Using ZXing wrapper for simplicity
-      final barcode = barcodeScanner.decodeImagePath(image.path);
 
-      if (barcode != null && barcode.isNotEmpty) {
-        setState(() {
-          barcodeResult = barcode;
-          Navigator.pop(context, barcode);
-        });
+      // Initialize the barcode SDK
+      FlutterBarcodeSdk barcodeSdk = FlutterBarcodeSdk();
+      List<BarcodeResult> barcodes = await barcodeSdk.decodeFile(image.path);
+
+      if (barcodes.isNotEmpty) {
+        String barcodeResult = barcodes.first.text;  // Extract the barcode string
+        Navigator.pop(context, barcodeResult);  // Return the barcode result
       } else {
-        setState(() {
-          barcodeResult = 'No barcode found';
-        });
+        Navigator.pop(context, 'No barcode found'); // Return no result found
       }
+    } catch (e) {
+      print('Error scanning barcode: $e');
+    } finally {
+      setState(() {
+        isCapturing = false; // Reset capture state
+      });
     }
   }
 
@@ -80,7 +85,10 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
       body: isCameraInitialized
           ? Stack(
               children: [
-                CameraPreview(_controller!),  // Display camera feed
+                Transform.scale(
+                  scaleX: -1, // Flip horizontally
+                  child: CameraPreview(_controller!), // Display camera feed
+                ),
                 Positioned(
                   bottom: 20,
                   left: 20,
@@ -91,7 +99,7 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
                 ),
               ],
             )
-          : Center(child: CircularProgressIndicator()),  // Show loading until camera is initialized
+          : Center(child: CircularProgressIndicator()), // Show loading until camera is initialized
     );
   }
 }

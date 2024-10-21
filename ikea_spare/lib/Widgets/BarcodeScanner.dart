@@ -21,7 +21,19 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
     var scanResult = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => SimpleBarcodeScannerPage(), // Use the scanner from simple_barcode_scanner
+        builder: (context) => Scaffold(
+          appBar: AppBar(
+            title: Text('Scanning Barcode'),
+            leading: IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () {
+                // Close the scanner when the close button is pressed
+                Navigator.pop(context); // Close scanner
+              },
+            ),
+          ),
+          body: SimpleBarcodeScannerPage(), // Use the scanner from simple_barcode_scanner
+        ),
       ),
     );
 
@@ -43,9 +55,6 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
             Navigator.pop(context);
           },
         ),
-      ),
-      body: Center(
-        child: Text('Scanning will start automatically...'),
       ),
     );
   }

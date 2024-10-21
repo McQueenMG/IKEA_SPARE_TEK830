@@ -7,11 +7,13 @@ import 'package:ikea_spare/Widgets/ListCard.dart';
 class ScannedPart extends StatefulWidget {
   //final ValueNotifier<int> partid;
   //final SparePart part;
-  final String partid;
+  //final String partid;
+  ValueNotifier<String> partid = ValueNotifier<String>("H982579");
+  
 
   ScannedPart({
     super.key,
-    required this.partid,
+    //required this.partid,
     //required this.part,
   });
 
@@ -25,13 +27,13 @@ class _ScannedPartState extends State<ScannedPart> {
   // blah
   @override
   void initState() {
-    super.initState();
+    super.initState();  
   }
 
   @override
   Widget build(BuildContext context) {
     List<SparePart> parts = partsInstance.getSpareParts();
-    SparePart currentPart= partsInstance.getSparePartFromID(widget.partid);
+    SparePart currentPart= partsInstance.getSparePartFromID(widget.partid.value);
 
     return SizedBox(
       width: double.infinity,
@@ -47,11 +49,13 @@ class _ScannedPartState extends State<ScannedPart> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            ValueListenableBuilder(valueListenable: widget.partid, builder: (context, value, child) {
+              return Container(
               width: double.infinity,
               height: 100,
               child: ListCard(part: currentPart, backgroundColor: Colors.lightBlue[50]!,),
-            ),
+            );
+            }),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

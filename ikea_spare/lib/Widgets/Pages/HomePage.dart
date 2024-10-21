@@ -7,6 +7,8 @@ import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 import 'package:ikea_spare/Widgets/FilterButton.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 
+
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -19,7 +21,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
   Filter selectedFilter = Filter.All; // Default filter set to "All"
-  ValueNotifier<String> partid = ValueNotifier<String>("U232204");
+  //ValueNotifier<String> partid = ValueNotifier<String>("U232204");
   
 
   void _onSearchChanged(String searchText) {
@@ -126,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 600,
                 height: 565,
                 child: ScannedPart(
-                  partid: partid.value,
+                  //partid: partid.value,
                     // part: SparePart(
                     //     "H191825",
                     //     "Cap White",

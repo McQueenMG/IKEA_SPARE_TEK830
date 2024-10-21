@@ -20,7 +20,10 @@ class ListCard extends StatelessWidget {
         onTap: () {
           setSparePart(part);
         },
+      
+
       child: Card(
+        
         color: backgroundColor,
         shape: const LinearBorder(),
         margin: const EdgeInsets.only(top: 0, bottom: 0, left: 5, right: 5),

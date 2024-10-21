@@ -41,6 +41,27 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         title: Text(widget.title),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: width * 0.075),
+            child: Row(
+              children: [
+                IconButton(
+                icon: const Icon(Icons.home_filled),
+                onPressed: () {},
+              ),
+
+              const Text(
+                'Kobe, Japan',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Row(

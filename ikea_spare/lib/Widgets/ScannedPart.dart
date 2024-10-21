@@ -46,15 +46,19 @@ class _ScannedPartState extends State<ScannedPart> {
               children: [
                 Container(
                   height: height * 0.3,
+                  width: width * 0.95,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.grey[50]!,
                   ),
                   child: Row(
                     children: [
-                      Image.network(
-                        part.getImageUrl,
-                        fit: BoxFit.cover,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.network(
+                          part.getImageUrl,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.all(height * 0.025),
@@ -139,8 +143,8 @@ class _ScannedPartState extends State<ScannedPart> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ConstrainedBox(
-                      constraints: BoxConstraints.tightFor(
-                          width: width * 0.175, height: 40),
+                      constraints:
+                          BoxConstraints.tightFor(width: 120, height: 40),
                       child: ElevatedButton(
                         onPressed: () {
                           removeQuantity(part);
@@ -160,8 +164,8 @@ class _ScannedPartState extends State<ScannedPart> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: ConstrainedBox(
-                        constraints: BoxConstraints.tightFor(
-                            width: width * 0.1, height: 60),
+                        constraints:
+                            BoxConstraints.tightFor(width: 100, height: 60),
                         child: Center(
                           child: TextField(
                             textAlign: TextAlign.center,
@@ -184,8 +188,8 @@ class _ScannedPartState extends State<ScannedPart> {
                     ),
                     const SizedBox(width: 10),
                     ConstrainedBox(
-                      constraints: BoxConstraints.tightFor(
-                          width: width * 0.175, height: 40),
+                      constraints:
+                          BoxConstraints.tightFor(width: 120, height: 40),
                       child: ElevatedButton(
                         onPressed: () {
                           addQuantity(part);

@@ -27,8 +27,7 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
             leading: IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
-                // Close the scanner when the close button is pressed
-                Navigator.pop(context); // Close scanner
+                Navigator.pop(context); 
               },
             ),
           ),
@@ -51,7 +50,6 @@ class _BarcodeScannerState extends State<BarcodeScanner> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            // Navigate back when back button is pressed
             Navigator.pop(context);
           },
         ),

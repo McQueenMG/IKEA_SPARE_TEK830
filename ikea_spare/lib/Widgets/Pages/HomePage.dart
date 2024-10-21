@@ -79,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text('Scan'),
                     style: ElevatedButton.styleFrom(
                       side: BorderSide(
-                        color: Colors.black, // Border color
-                        width: 0.5,        // Border width
+                        color: Colors.black, 
+                        width: 0.5,      
                       ),
                     ),      
                   ),

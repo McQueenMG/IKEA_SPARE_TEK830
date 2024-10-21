@@ -6,7 +6,7 @@ import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
 import 'package:ikea_spare/Widgets/CustomSearchBar.dart';
 import 'package:ikea_spare/Widgets/FilterButton.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
-import 'package:ikea_spare/Backend/GlobalVariables.dart';
+import 'package:ikea_spare/Backend/CurrentScannedPart.dart';
 
 
 

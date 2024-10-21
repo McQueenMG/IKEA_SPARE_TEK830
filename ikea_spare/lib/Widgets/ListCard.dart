@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
-import 'package:ikea_spare/Backend/GlobalVariables.dart';
+import 'package:ikea_spare/Backend/CurrentScannedPart.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({super.key, required this.part, required this.backgroundColor});
@@ -100,7 +100,8 @@ class ListCard extends StatelessWidget {
     ));
   }
   void setSparePart(SparePart part) {
-    print("Setting part id: ${part.getId}");
-    Globalvariables().setPartId(part.getId);
+    CurrentScannedPart().setPartId(part.getId);
+    print ("Part ID: ${CurrentScannedPart().getPartIdValue()}");
+    print("Part Name: ${part.getName}");
     }
 }

@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (result != null && result is String) {
       setState(() {
         barcodeResult = result;
+        //_searchText = barcodeResult;
       });
     } else {
       setState(() {

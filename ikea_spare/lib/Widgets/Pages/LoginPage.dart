@@ -10,8 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController()..text = "ikea";
+  final TextEditingController _passwordController = TextEditingController()..text = "123";
   final String _userName = "ikea";
   final String _password = "123";
 
@@ -38,14 +38,19 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start, 
             children: [
               Padding(
                 padding: const EdgeInsets.all(100),
                   child: Container(
                     height: 200,
                     width: 500,
-                    color: Colors.blue,
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      border: Border.all(color: Colors.blueAccent),
+                      borderRadius: BorderRadius.circular(25)
+                    ),
                     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
                       // Username
@@ -62,9 +67,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
 
                             Expanded(
-                              child: TextField(
-                                controller: _usernameController,
-                                onChanged: (value) => {},
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                                child: TextField(
+                                        controller: _usernameController,
+                                        onChanged: (value) => {},
+                                      )
                               )
                             )
                           ],
@@ -81,21 +89,28 @@ class _LoginPageState extends State<LoginPage> {
                           
                             const Padding(
                               padding: EdgeInsets.fromLTRB(20, 0, 6, 0),
-                              child: Text("Password: ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
+                              child: Text(" Password: ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
                             ),
 
                             Expanded(
-                              child: TextField(
-                                obscureText: true,
-                                controller: _passwordController,
-                                onChanged: (value) => {},
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                                child: TextField(
+                                        obscureText: true,
+                                        controller: _passwordController,
+                                        onChanged: (value) => {},
+                                      )
                               )
                             )
                           ],
                         ),
                       ),
 
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      ),
 
+                      // Login button
                       SizedBox(
                         height: 40,
                         width: 200,

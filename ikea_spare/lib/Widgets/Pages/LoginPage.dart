@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
 
                       // Username
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 50,
                         child: Row(
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
 
                       // Password
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 50,
                         child: Row(

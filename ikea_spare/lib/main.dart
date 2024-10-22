@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ikea_spare/Widgets/Pages/HomePage.dart';
 import 'package:ikea_spare/Widgets/Pages/LoginPage.dart'; // Import the new file where the homepage logic is.
 
 void main() {

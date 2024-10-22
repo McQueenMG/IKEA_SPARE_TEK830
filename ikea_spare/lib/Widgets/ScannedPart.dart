@@ -167,37 +167,34 @@ class _ScannedPartState extends State<ScannedPart> {
                               textAlign: TextAlign.center),
                         ),
                         Container(
+                          constraints: BoxConstraints(maxWidth: width * 0.2),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 100, height: 60),
-                            child: Center(
-                              child: TextField(
-                                textAlign: TextAlign.center,
-                                controller: textController,
-                                decoration: const InputDecoration(
-                                  contentPadding: EdgeInsets.only(left: 5),
-                                  labelText: 'Quantity',
-                                  labelStyle: TextStyle(
-                                      fontSize: 12, color: Colors.black),
-                                ),
-                                keyboardType: TextInputType.number,
-                                inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter.allow(
-                                      RegExp(r'^-?\d*$')),
-                                ],
-                                onChanged: (value) {
-                                  if (int.tryParse(value) == null) {
-                                    input = 0;
-                                    return;
-                                  }
-
-                                  input = int.parse(value);
-                                },
+                          child: Center(
+                            child: TextField(
+                              textAlign: TextAlign.center,
+                              controller: textController,
+                              decoration: const InputDecoration(
+                                contentPadding: EdgeInsets.only(left: 5),
+                                labelText: 'Quantity',
+                                labelStyle: TextStyle(
+                                    fontSize: 12, color: Colors.black),
                               ),
+                              keyboardType: TextInputType.number,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^-?\d*$')),
+                              ],
+                              onChanged: (value) {
+                                if (int.tryParse(value) == null) {
+                                  input = 0;
+                                  return;
+                                }
+
+                                input = int.parse(value);
+                              },
                             ),
                           ),
                         ),
@@ -208,7 +205,7 @@ class _ScannedPartState extends State<ScannedPart> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
-                            shape: CircleBorder(),
+                            shape: const CircleBorder(),
                           ),
                           child: const Text("+",
                               style: TextStyle(
@@ -217,19 +214,23 @@ class _ScannedPartState extends State<ScannedPart> {
                                   fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            changeQuantity(part);
-                            textController.clear();
-                            input = 0;
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
+                        Container(
+                          constraints: BoxConstraints(maxWidth: width * 0.5),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              changeQuantity(part);
+                              textController.clear();
+                              input = 0;
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                            ),
+                            child: const Text("Submit",
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                                textAlign: TextAlign.center),
                           ),
-                          child: const Text("Submit",
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black),
-                              textAlign: TextAlign.center),
                         ),
                       ],
                     ),

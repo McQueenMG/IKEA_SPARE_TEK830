@@ -314,13 +314,12 @@ class Parts {
       "10:9:1");
 
   SparePart _screwDriverThing = SparePart(
-    "126908", 
-    "", 
-    "", 
-    "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png", 
-    ValueNotifier<int>(7), 
-    "10:9:1"
-  );
+      "126908",
+      "",
+      "",
+      "https://www.ikea.com/global/assets/customer-service/returns-claims/spareparts/images/126908.png",
+      ValueNotifier<int>(7),
+      "10:9:1");
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -423,7 +422,7 @@ class Parts {
         return part;
       }
     }
-    throw ("No spare-part with that ID");
+    throw Exception("No spare-part with that ID");
   }
 
   Product getProductFromID(String id) {
@@ -432,6 +431,6 @@ class Parts {
         return prod;
       }
     }
-    throw ("No product with that ID");
+    throw Exception("No product with that ID");
   }
 }

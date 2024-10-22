@@ -15,9 +15,8 @@ class FilterButtonChoice extends StatefulWidget {
 class _FilterButtonChoiceState extends State<FilterButtonChoice> {
   @override
   Widget build(BuildContext context) {
-    // Add a SizedBox or ConstrainedBox if necessary
     return SizedBox(
-      width: double.infinity, // Ensure the button doesn't overflow
+      width: double.infinity, 
       child: SegmentedButton<Filter>(
         segments: const <ButtonSegment<Filter>>[
           ButtonSegment<Filter>(
@@ -37,6 +36,12 @@ class _FilterButtonChoiceState extends State<FilterButtonChoice> {
         onSelectionChanged: (Set<Filter> newSelection) {
           widget.onFilterChanged(newSelection.first); // Notify parent of the new selection
         },
+         style: SegmentedButton.styleFrom(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          selectedBackgroundColor: const Color.fromARGB(255, 133, 175, 210),
+          selectedForegroundColor: Colors.black,
+        ),
       ),
     );
   }

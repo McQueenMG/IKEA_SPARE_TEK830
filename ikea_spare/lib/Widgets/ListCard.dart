@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
+import 'package:ikea_spare/Backend/CurrentScannedPart.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({super.key, required this.part, required this.backgroundColor});
@@ -15,20 +16,27 @@ class ListCard extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: cardHeight,
+      child: GestureDetector(
+        onTap: () {
+          setSparePart(part);
+        },
+      
+
       child: Card(
+        
         color: backgroundColor,
         shape: const LinearBorder(),
         margin: const EdgeInsets.only(top: 0, bottom: 0, left: 5, right: 5),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(4),
-              width: cardHeight,
-              height: double.infinity,
+              padding: const EdgeInsets.all(6),
+              width: 90, // Fixed width for the image
+              height: double.infinity, // Fixed height for the image
               child: Image.network(
-                part.getImageUrl,
-                fit: BoxFit.cover,
-              ),
+                  'https://corsproxy.io/?${part.getImageUrl}',
+                  fit: BoxFit.cover,
+                ),
             ),
             Expanded(
               child: Row(
@@ -62,7 +70,7 @@ class ListCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Text(
-                        "temp", // Static text
+                        part.getLocation,
                         maxLines: maxLines,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
@@ -92,6 +100,11 @@ class ListCard extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
+  void setSparePart(SparePart part) {
+    CurrentScannedPart().setPartId(part.getId);
+    print ("Part ID: ${CurrentScannedPart().getPartIdValue()}");
+    print("Part Name: ${part.getName}");
+    }
 }

@@ -57,7 +57,7 @@ class _CardWidgetState extends State<DropdownCard> {
                 children: [
                   // Add the network image here
                   Image.network(
-                    widget.product.getImageUrl,
+                    'https://corsproxy.io/?${widget.product.getImageUrl}',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.cover,

@@ -24,8 +24,18 @@ class SearchFilter {
     switch (filter) {
       case Filter.All:
         filteredItems = [
-           ...products.where((product) => product.getName.toLowerCase().contains(lowerCaseSearchText) || product.getId.toLowerCase().contains(lowerCaseSearchText)).map((product) => DropdownCard(product: product)),
-          ...parts.where((part) => part.getName.toLowerCase().contains(lowerCaseSearchText) || part.getId.toLowerCase().contains(lowerCaseSearchText)).map((part) => ListCard(part: part, backgroundColor: getBackgroundColor(),)),
+          ...products
+              .where((product) =>
+                  product.getName.toLowerCase().contains(lowerCaseSearchText) ||
+                  product.getId.toLowerCase().contains(lowerCaseSearchText) ||
+                  product.getSpareParts.any((part) =>
+                      part.getName.toLowerCase().contains(lowerCaseSearchText) ||
+                      part.getId.toLowerCase().contains(lowerCaseSearchText)))
+              .map((product) => DropdownCard(product: product)),
+          ...parts
+              .where((part) => part.getName.toLowerCase().contains(lowerCaseSearchText) ||
+                  part.getId.toLowerCase().contains(lowerCaseSearchText)).map((part) 
+                  => ListCard(part: part, backgroundColor: getBackgroundColor(),)),
         ];
         break;
       case Filter.Part:

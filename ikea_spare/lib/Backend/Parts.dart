@@ -374,42 +374,10 @@ class Parts {
   // private constructor to avoid multiple instances
   Parts._privateConstructor() {
     // spare-parts
-    _partsList.addAll([
-      _ovenSeal,
-      _bakingTray,
-      _innerDoorGlass,
-      _masterCableClamp,
-      _longScew,
-      _woodStickThing,
-      _hexnut,
-      _metalBendThing,
-      _handScrew,
-      _dowl,
-      _metalCornerThing,
-      _cutleryTray,
-      _railBackStop,
-      _waterstopHoseLong,
-      _microfilter,
-      _carbonFilter,
-      _controlPanel,
-      _metalGreaseFilter,
-      _lowerHingeAssembly,
-      _crisperBox,
-      _screw,
-      _glassTurntable,
-      _latchSpring,
-      _swivelAssembly,
-      _foot,
-      _coupler,
-      _drainPipeThing,
-      _plank,
-      _attachToStuff,
-      _otherAttachThing,
-      _waterFilterThing,
-      _metalRod,
-      _triangleThing,
-      _screwDriverThing
-    ]);
+    _partsList.addAll([_ovenSeal, _bakingTray, _innerDoorGlass, _masterCableClamp, _longScew, _woodStickThing, _hexnut, _metalBendThing, _handScrew, _dowl, _metalCornerThing,
+                       _cutleryTray, _railBackStop, _waterstopHoseLong, _microfilter, _carbonFilter, _controlPanel, _metalGreaseFilter, _lowerHingeAssembly, _crisperBox, _screw,
+                       _glassTurntable, _latchSpring, _swivelAssembly, _foot, _coupler, _drainPipeThing, _plank, _attachToStuff, _otherAttachThing, _waterFilterThing, _metalRod,
+                       _triangleThing, _screwDriverThing, _ovenShelf, _alimGeneratore]);
 
     // products
     // TODO ADD PROPER SPARE-PARTS FROM IKEA WEBSITE

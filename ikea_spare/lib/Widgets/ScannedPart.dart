@@ -157,7 +157,7 @@ class _ScannedPartState extends State<ScannedPart> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
-                            shape: CircleBorder(),
+                            shape: const CircleBorder(),
                           ),
                           child: const Text("-",
                               style: TextStyle(
@@ -166,10 +166,9 @@ class _ScannedPartState extends State<ScannedPart> {
                                   fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center),
                         ),
-                        const SizedBox(width: 10),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.yellow,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: ConstrainedBox(
@@ -202,7 +201,6 @@ class _ScannedPartState extends State<ScannedPart> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10),
                         ElevatedButton(
                           onPressed: () {
                             input++;
@@ -219,7 +217,6 @@ class _ScannedPartState extends State<ScannedPart> {
                                   fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center),
                         ),
-                        const SizedBox(width: 10),
                         ElevatedButton(
                           onPressed: () {
                             changeQuantity(part);
@@ -227,7 +224,7 @@ class _ScannedPartState extends State<ScannedPart> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
                           ),
-                          child: const Text("Commit",
+                          child: const Text("Submit",
                               style:
                                   TextStyle(fontSize: 16, color: Colors.black),
                               textAlign: TextAlign.center),

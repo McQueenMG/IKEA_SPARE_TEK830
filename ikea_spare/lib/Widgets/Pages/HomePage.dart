@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikea_spare/Backend/CurrentScannedPart.dart';
 import 'package:ikea_spare/Widgets/ScannedPart.dart';
 import 'package:ikea_spare/Widgets/SparePartList.dart';
 import 'package:ikea_spare/Widgets/SparePartListHeader.dart';
@@ -43,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (result != null && result is String) {
       setState(() {
         barcodeResult = result;
+        CurrentScannedPart().setPartId(barcodeResult);
         //_searchText = barcodeResult;
       });
     } else {
@@ -114,10 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onFilterChanged: _onFilterChanged,
                 ),
               ),
-              Text(
-                'Scanned Barcode: $barcodeResult',
-                style: TextStyle(fontSize: 16),
-              ),
+              // Text(
+              //   'Scanned Barcode: $barcodeResult',
+              //   style: TextStyle(fontSize: 16),
+              // ),
               Flexible(
                 flex: 1,
                 child: Row(

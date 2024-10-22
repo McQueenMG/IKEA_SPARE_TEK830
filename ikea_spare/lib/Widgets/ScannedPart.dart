@@ -47,63 +47,71 @@ class _ScannedPartState extends State<ScannedPart> {
                       ),
                       child: Row(
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: Image.network(
-                              part.getImageUrl,
-                              fit: BoxFit.cover,
+                          ConstrainedBox(
+                            constraints:
+                                BoxConstraints.tightFor(width: width * 0.4),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.network(
+                                part.getImageUrl,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.all(height * 0.025),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  part.getName,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  part.getId,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                                Divider(
-                                  color: Colors.black,
-                                  height: height * 0.01,
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.inventory_2,
-                                      color: Colors.black,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(height * 0.0125),
-                                      child: Text(
-                                        "Quantity: ${part.getQuantity.value}",
-                                        style: const TextStyle(fontSize: 16),
+                          ConstrainedBox(
+                            constraints:
+                                BoxConstraints.tightFor(width: width * 0.5),
+                            child: Padding(
+                              padding: EdgeInsets.all(height * 0.025),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    part.getName,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    part.getId,
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.inventory_2,
+                                        color: Colors.black,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.place_rounded,
-                                      color: Colors.black,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(height * 0.0125),
-                                      child: Text(
-                                        "Location: ${part.getLocation}",
-                                        style: const TextStyle(fontSize: 16),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
+                                        child: Text(
+                                          "Quantity: ${part.getQuantity.value}",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.place_rounded,
+                                        color: Colors.black,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
+                                        child: Text(
+                                          "Location: ${part.getLocation}",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],

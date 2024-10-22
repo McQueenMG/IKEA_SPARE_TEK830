@@ -97,13 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ElevatedButton(
                     onPressed: _scanBarcode,
-                    child: Text('Scan'),
                     style: ElevatedButton.styleFrom(
                       side: BorderSide(
                         color: Colors.black, 
                         width: 0.5,      
                       ),
-                    ),      
+                    ),
+                    child: Text('Scan'),      
                   ),
                 ],
               ),

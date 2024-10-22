@@ -37,7 +37,7 @@ class SparePartList extends StatefulWidget {
   final Filter filter; 
   final String searchText; 
 
-  SparePartList({super.key, required this.filter, required this.searchText});
+  const SparePartList({super.key, required this.filter, required this.searchText});
 
   @override
   _SparePartListState createState() => _SparePartListState();

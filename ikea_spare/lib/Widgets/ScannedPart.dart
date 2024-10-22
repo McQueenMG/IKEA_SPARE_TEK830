@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ikea_spare/Backend/Parts.dart';
 import 'package:ikea_spare/Backend/SparePart.dart';
-import 'package:ikea_spare/Widgets/ListCard.dart';
 
 class ScannedPart extends StatefulWidget {
   final String id;
@@ -56,7 +55,7 @@ class _ScannedPartState extends State<ScannedPart> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.network(
-                          part.getImageUrl,
+                          'https://corsproxy.io/?${part.getImageUrl}',
                           fit: BoxFit.cover,
                         ),
                       ),

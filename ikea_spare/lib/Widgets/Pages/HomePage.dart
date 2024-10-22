@@ -8,8 +8,6 @@ import 'package:ikea_spare/Widgets/FilterButton.dart';
 import 'package:ikea_spare/Widgets/FilterButtonChoice.dart';
 import 'package:ikea_spare/Backend/CurrentScannedPart.dart';
 
-
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -22,7 +20,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _searchText = '';
   Filter selectedFilter = Filter.All; // Default filter set to "All"
-  
 
   void _onSearchChanged(String searchText) {
     setState(() {
@@ -51,17 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: [
                 IconButton(
-                icon: const Icon(Icons.home_filled),
-                onPressed: () {},
-              ),
-
-              const Text(
-                'Kobe, Japan',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
+                  icon: const Icon(Icons.home_filled),
+                  onPressed: () {},
                 ),
-              ),
+                const Text(
+                  'Kobe, Japan',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                  ),
+                ),
               ],
             ),
           ),
@@ -145,12 +141,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )
             ]),
-            SizedBox(
-                width: 600,
-                height: 565,
-                child: ScannedPart(
-
-                         )),
+            Flexible(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: width * 0.4,
+                        maxHeight: height * 0.81,
+                      ),
+                      child: const ScannedPart(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

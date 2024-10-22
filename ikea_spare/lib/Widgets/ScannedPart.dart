@@ -18,7 +18,8 @@ class _ScannedPartState extends State<ScannedPart> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<String>(
-      valueListenable: CurrentScannedPart().getPartId(), // Listen for changes in the scanned part ID
+      valueListenable: CurrentScannedPart()
+          .getPartId(), // Listen for changes in the scanned part ID
       builder: (context, partid, child) {
         SparePart part = partsInstance.getSparePartFromID(partid);
 
@@ -61,7 +62,8 @@ class _ScannedPartState extends State<ScannedPart> {
                                 Text(
                                   part.getName,
                                   style: const TextStyle(
-                                      fontSize: 20, fontWeight: FontWeight.bold),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 Text(
                                   part.getId,
@@ -137,7 +139,8 @@ class _ScannedPartState extends State<ScannedPart> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ConstrainedBox(
-                          constraints: BoxConstraints.tightFor(width: 120, height: 40),
+                          constraints: const BoxConstraints.tightFor(
+                              width: 120, height: 40),
                           child: ElevatedButton(
                             onPressed: () {
                               removeQuantity(part);
@@ -146,7 +149,8 @@ class _ScannedPartState extends State<ScannedPart> {
                               backgroundColor: Colors.red,
                             ),
                             child: const Text("Remove",
-                                style: TextStyle(fontSize: 12, color: Colors.black),
+                                style: TextStyle(
+                                    fontSize: 12, color: Colors.black),
                                 textAlign: TextAlign.center),
                           ),
                         ),
@@ -157,14 +161,16 @@ class _ScannedPartState extends State<ScannedPart> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: ConstrainedBox(
-                            constraints: BoxConstraints.tightFor(width: 100, height: 60),
+                            constraints: const BoxConstraints.tightFor(
+                                width: 100, height: 60),
                             child: Center(
                               child: TextField(
                                 textAlign: TextAlign.center,
                                 decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.only(left: 5),
                                   labelText: 'Quantity',
-                                  labelStyle: TextStyle(fontSize: 12, color: Colors.black),
+                                  labelStyle: TextStyle(
+                                      fontSize: 12, color: Colors.black),
                                 ),
                                 keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
@@ -179,7 +185,8 @@ class _ScannedPartState extends State<ScannedPart> {
                         ),
                         const SizedBox(width: 10),
                         ConstrainedBox(
-                          constraints: BoxConstraints.tightFor(width: 120, height: 40),
+                          constraints: const BoxConstraints.tightFor(
+                              width: 120, height: 40),
                           child: ElevatedButton(
                             onPressed: () {
                               addQuantity(part);
@@ -188,7 +195,8 @@ class _ScannedPartState extends State<ScannedPart> {
                               backgroundColor: Colors.green,
                             ),
                             child: const Text("Add",
-                                style: TextStyle(fontSize: 12, color: Colors.black),
+                                style: TextStyle(
+                                    fontSize: 12, color: Colors.black),
                                 textAlign: TextAlign.center),
                           ),
                         ),

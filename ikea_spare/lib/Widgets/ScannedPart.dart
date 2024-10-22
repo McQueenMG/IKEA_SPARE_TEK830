@@ -48,7 +48,8 @@ class _ScannedPartState extends State<ScannedPart> {
                       child: Row(
                         children: [
                           ConstrainedBox(
-                            constraints: BoxConstraints.tightFor(width: width * 0.4),
+                            constraints:
+                                BoxConstraints.tightFor(width: width * 0.4),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
                               child: Image.network(
@@ -58,7 +59,8 @@ class _ScannedPartState extends State<ScannedPart> {
                             ),
                           ),
                           ConstrainedBox(
-                            constraints: BoxConstraints.tightFor(width: width * 0.5),
+                            constraints:
+                                BoxConstraints.tightFor(width: width * 0.5),
                             child: Padding(
                               padding: EdgeInsets.all(height * 0.025),
                               child: Column(
@@ -66,6 +68,8 @@ class _ScannedPartState extends State<ScannedPart> {
                                 children: [
                                   Text(
                                     part.getName,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -81,7 +85,8 @@ class _ScannedPartState extends State<ScannedPart> {
                                         color: Colors.black,
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(height * 0.0125),
+                                        padding:
+                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
                                         child: Text(
                                           "Quantity: ${part.getQuantity.value}",
                                           style: const TextStyle(fontSize: 16),
@@ -96,7 +101,8 @@ class _ScannedPartState extends State<ScannedPart> {
                                         color: Colors.black,
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(height * 0.0125),
+                                        padding:
+                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
                                         child: Text(
                                           "Location: ${part.getLocation}",
                                           style: const TextStyle(fontSize: 16),

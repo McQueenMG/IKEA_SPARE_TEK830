@@ -47,11 +47,15 @@ class _ScannedPartState extends State<ScannedPart> {
                       ),
                       child: Row(
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: Image.network(
-                              part.getImageUrl,
-                              fit: BoxFit.cover,
+                          ConstrainedBox(
+                            constraints:
+                                BoxConstraints.tightFor(width: width * 0.4),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.network(
+                                part.getImageUrl,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
                           Padding(

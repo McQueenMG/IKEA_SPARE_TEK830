@@ -220,6 +220,8 @@ class _ScannedPartState extends State<ScannedPart> {
                         ElevatedButton(
                           onPressed: () {
                             changeQuantity(part);
+                            textController.clear();
+                            input = 0;
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,

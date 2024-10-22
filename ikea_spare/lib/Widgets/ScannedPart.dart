@@ -12,8 +12,10 @@ class ScannedPart extends StatefulWidget {
 }
 
 class _ScannedPartState extends State<ScannedPart> {
-  int? input;
+  int input = 0;
   Parts partsInstance = Parts();
+
+  final textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,8 +87,9 @@ class _ScannedPartState extends State<ScannedPart> {
                                         color: Colors.black,
                                       ),
                                       Padding(
-                                        padding:
-                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
+                                        padding: EdgeInsets.only(
+                                            top: height * 0.0125,
+                                            bottom: height * 0.0125),
                                         child: Text(
                                           "Quantity: ${part.getQuantity.value}",
                                           style: const TextStyle(fontSize: 16),
@@ -101,8 +104,9 @@ class _ScannedPartState extends State<ScannedPart> {
                                         color: Colors.black,
                                       ),
                                       Padding(
-                                        padding:
-                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
+                                        padding: EdgeInsets.only(
+                                            top: height * 0.0125,
+                                            bottom: height * 0.0125),
                                         child: Text(
                                           "Location: ${part.getLocation}",
                                           style: const TextStyle(fontSize: 16),
@@ -117,7 +121,7 @@ class _ScannedPartState extends State<ScannedPart> {
                         ],
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: width * 0.05)),
+                    Padding(padding: EdgeInsets.only(top: width * 0.025)),
                     SizedBox(
                       width: width * 0.9,
                       child: const Text(
@@ -146,21 +150,21 @@ class _ScannedPartState extends State<ScannedPart> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 120, height: 40),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              removeQuantity(part);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            ),
-                            child: const Text("Remove",
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black),
-                                textAlign: TextAlign.center),
+                        ElevatedButton(
+                          onPressed: () {
+                            input--;
+                            textController.text = "$input";
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: CircleBorder(),
                           ),
+                          child: const Text("-",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center),
                         ),
                         const SizedBox(width: 10),
                         Container(
@@ -174,6 +178,7 @@ class _ScannedPartState extends State<ScannedPart> {
                             child: Center(
                               child: TextField(
                                 textAlign: TextAlign.center,
+                                controller: textController,
                                 decoration: const InputDecoration(
                                   contentPadding: EdgeInsets.only(left: 5),
                                   labelText: 'Quantity',
@@ -182,31 +187,50 @@ class _ScannedPartState extends State<ScannedPart> {
                                 ),
                                 keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter.digitsOnly
+                                  FilteringTextInputFormatter.allow(
+                                      RegExp(r'^-?\d*$')),
                                 ],
                                 onChanged: (value) {
-                                  input = int.tryParse(value);
+                                  if (int.tryParse(value) == null) {
+                                    input = 0;
+                                    return;
+                                  }
+
+                                  input = int.parse(value);
                                 },
                               ),
                             ),
                           ),
                         ),
                         const SizedBox(width: 10),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 120, height: 40),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              addQuantity(part);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green,
-                            ),
-                            child: const Text("Add",
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black),
-                                textAlign: TextAlign.center),
+                        ElevatedButton(
+                          onPressed: () {
+                            input++;
+                            textController.text = "$input";
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: CircleBorder(),
                           ),
+                          child: const Text("+",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center),
+                        ),
+                        const SizedBox(width: 10),
+                        ElevatedButton(
+                          onPressed: () {
+                            changeQuantity(part);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                          ),
+                          child: const Text("Commit",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
+                              textAlign: TextAlign.center),
                         ),
                       ],
                     ),
@@ -220,23 +244,10 @@ class _ScannedPartState extends State<ScannedPart> {
     );
   }
 
-  void removeQuantity(SparePart part) {
+  void changeQuantity(SparePart part) {
     setState(() {
-      if (input == null) {
-        return;
-      }
-      int tmp = part.getQuantity.value - input!;
-      part.setQuantity(tmp);
-    });
-  }
-
-  void addQuantity(SparePart part) {
-    setState(() {
-      if (input == null) {
-        return;
-      }
-      int tmp = part.getQuantity.value + input!;
-      part.setQuantity(tmp);
+      int newQuantity = part.getQuantity.value + input;
+      part.setQuantity(newQuantity);
     });
   }
 }

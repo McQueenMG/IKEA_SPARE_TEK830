@@ -45,7 +45,7 @@ class _ScannedPartState extends State<ScannedPart> {
                       width: width * 0.95,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey[50]!,
+                        color: Colors.white,
                       ),
                       child: Row(
                         children: [
@@ -135,7 +135,7 @@ class _ScannedPartState extends State<ScannedPart> {
                       height: height * 0.45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey[50]!,
+                        color: Colors.white,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(10),

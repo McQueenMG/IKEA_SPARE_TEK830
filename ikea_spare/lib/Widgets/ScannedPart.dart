@@ -76,44 +76,91 @@ class _ScannedPartState extends State<ScannedPart> {
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Text(
-                                    part.getId,
-                                    style: const TextStyle(fontSize: 16),
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.inventory_2,
-                                        color: Colors.black,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: height * 0.0125,
-                                            bottom: height * 0.0125),
-                                        child: Text(
-                                          "Quantity: ${part.getQuantity.value}",
+                                  if (!(height < 500))
+                                    Text(
+                                      part.getId,
+                                      style: const TextStyle(fontSize: 16),
+                                    ),
+                                  if (height < 500 && height >= 350)
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${part.getId}, ",
                                           style: const TextStyle(fontSize: 16),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.place_rounded,
-                                        color: Colors.black,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: height * 0.0125,
-                                            bottom: height * 0.0125),
-                                        child: Text(
-                                          "Location: ${part.getLocation}",
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getLocation}",
                                           style: const TextStyle(fontSize: 16),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
+                                  if (height < 350)
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${part.getId}, ",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                        const Icon(
+                                          Icons.inventory_2,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getQuantity.value}, ",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getLocation}",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                      ],
+                                    ),
+                                  if (height >= 350)
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.inventory_2,
+                                          color: Colors.black,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: height * 0.0125,
+                                              bottom: height * 0.0125),
+                                          child: Text(
+                                            "Quantity: ${part.getQuantity.value}",
+                                            style:
+                                                const TextStyle(fontSize: 16),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  if (height >= 500)
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: height * 0.0125,
+                                              bottom: height * 0.0125),
+                                          child: Text(
+                                            "Location: ${part.getLocation}",
+                                            style:
+                                                const TextStyle(fontSize: 16),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                 ],
                               ),
                             ),

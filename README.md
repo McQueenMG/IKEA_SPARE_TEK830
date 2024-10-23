@@ -12,7 +12,7 @@ Ensure that Flutter is added to your system PATH.
 Dart SDK: 
 Dart is included with Flutter, so no separate installation is required. You can verify the Dart SDK installation with:
 
-dart --version
+```dart --version```
 
 Android Studio/Xcode: 
 For Android and iOS development, you'll need Android Studio and/or Xcode for building and running the app on emulators or physical devices.
@@ -23,34 +23,35 @@ A code editor with Flutter and Dart support (VS Code with the Flutter plugin or 
 ## Installation
 
 Clone the repository:
-git clone [https://github.com/your-username/your-project.git](https://github.com/McQueenMG/IKEA_SPARE_TEK830.git)
-cd ikea_spare
+git clone [https://github.com/McQueenMG/IKEA_SPARE_TEK830.git](https://github.com/McQueenMG/IKEA_SPARE_TEK830.git)
+
+```cd ikea_spare```
 
 Install dependencies: 
 Flutter uses a package manager to handle dependencies. Run the following command to install all necessary packages listed in pubspec.yaml:
 
-flutter pub get
+```flutter pub get```
 
 ## Running the Project
 To run the Flutter app locally on an emulator or physical device:
 Ensure you have a connected device or emulator.
 You can check connected devices with:
 
-flutter devices
+```flutter devices```
 
 Run the app: 
 To run the app on your device or emulator, execute:
 
-´´´flutter run´´´
+```flutter run```
 
 This will build the project and deploy it to the selected device.
 
 Build for release (Optional): To build an APK for Android or IPA for iOS, use:
 
-flutter build apk --release    # For Android
-flutter build ios --release    # For iOS (requires macOS)
+`flutter build apk --release`    # For Android
+`flutter build ios --release`    # For iOS (requires macOS)
 
 ## Testing
 Run unit tests: Flutter includes a test framework for unit and widget tests. To run all tests, use:
 
-flutter test
+```flutter test```

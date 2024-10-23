@@ -32,7 +32,7 @@ A code editor with Flutter and Dart support (VS Code with the Flutter plugin or 
 ## Installation
 
 Clone the repository:
-git clone [https://github.com/McQueenMG/IKEA_SPARE_TEK830.git](https://github.com/McQueenMG/IKEA_SPARE_TEK830.git)
+git clone https://github.com/McQueenMG/IKEA_SPARE_TEK830.git
 
 ```cd ikea_spare```
 

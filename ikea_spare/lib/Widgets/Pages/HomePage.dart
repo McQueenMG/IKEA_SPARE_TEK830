@@ -22,6 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Filter selectedFilter = Filter.All; 
   String  barcodeResult = '';
 
+  final TextEditingController _searchController = TextEditingController(); 
+
   void _onSearchChanged(String searchText) {
     setState(() {
       _searchText = searchText;
@@ -45,13 +47,20 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         barcodeResult = result;
         CurrentScannedPart().setPartId(barcodeResult);
-        //_searchText = barcodeResult;
+        _searchText = barcodeResult;
+        _searchController.text = barcodeResult;
       });
     } else {
       setState(() {
         barcodeResult = 'No barcode scanned';
       });
     }
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose(); 
+    super.dispose();
   }
 
 
@@ -94,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(
                     width: width * 0.4,
                     height: 50,
-                    child: CustomSearchBar(onSearch: _onSearchChanged),
+                    child: CustomSearchBar(onSearch: _onSearchChanged, controller: _searchController,),
                   ),
                   ElevatedButton(
                     onPressed: _scanBarcode,

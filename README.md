@@ -49,6 +49,7 @@ This will build the project and deploy it to the selected device.
 Build for release (Optional): To build an APK for Android or IPA for iOS, use:
 
 `flutter build apk --release`    # For Android
+
 `flutter build ios --release`    # For iOS (requires macOS)
 
 ## Testing

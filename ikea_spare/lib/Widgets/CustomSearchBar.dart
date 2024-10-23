@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatefulWidget {
   final Function(String) onSearch;
+  final TextEditingController controller; 
 
-  const CustomSearchBar({super.key, required this.onSearch});
+  const CustomSearchBar({super.key, required this.onSearch, required this.controller,});
 
   @override
   _CustomSearchBarState createState() => _CustomSearchBarState();
@@ -23,7 +24,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
-        controller: _searchController,
+        controller: widget.controller,
         onChanged: widget.onSearch,
         decoration: InputDecoration(
           labelText: 'Search',

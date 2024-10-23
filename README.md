@@ -1,6 +1,15 @@
 # IKEA_SPARE_TEK830
 IKEA Capstone project at Chalmers University
 
+
+## Table of Contents
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Testing](#testing)
+
+
+
 ## Requirements
 Before running this project, ensure you have the following:
 

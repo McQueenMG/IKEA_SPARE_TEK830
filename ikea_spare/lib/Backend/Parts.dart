@@ -21,7 +21,7 @@ class Parts {
   SparePart _ovenSeal = SparePart(
       "U252354",
       "Oven Seal Std Materia",
-      "Ersätter: #H312064 C00385306 481010846713 DOOR SEAL\nErsätter: #X474268 OVEN DOOR GASKET ALTERNATIVE FOR BAUKNECHT 488000725238\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA",
+      "Replaces: #H312064 C00385306 481010846713 DOOR SEAL\nreplaces: #X474268 OVEN DOOR GASKET ALTERNATIVE FOR BAUKNECHT 488000725238\nThis article is compatible / suitable for the model: MATTRADITION MATTRADITION / IKEA",
       "https://cdn.fixpart.net/91464896/59a67f1f6c1db26be8e961f6d5a00f0c.jpg",
       ValueNotifier<int>(1),
       "10:9:1");
@@ -29,7 +29,7 @@ class Parts {
   SparePart _bakingTray = SparePart(
       "H982579",
       "Baking Tray, Grey",
-      "Produktegenskaper\nBredd: 47,7 cm\nLängd: 37 cm\nHöjd: 2,3 cm\nMaterial: emaljerad\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA",
+      "Product features\nWidth: 47,7 cm\nLength: 37 cm\nHeight: 2,3 cm\nMaterial: Enamelled\nThis article is compatible / suitable for the model: MATTRADITION MATTRADITION / IKEA",
       "https://cdn.fixpart.net/90120553/7bda9c4efaa248e22d215aa530a7332f.jpg",
       ValueNotifier<int>(2),
       "10:9:1");
@@ -37,7 +37,7 @@ class Parts {
   SparePart _innerDoorGlass = SparePart(
       "Q781475",
       "Inner Door Glass",
-      "Ersätter: #H315312 C00385305 481010826397 INNER DOOR GLASS\nErsätter: #Q118311 INNER DOOR GLASS ALTERNATIVE FOR WHIRLPOOL\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA",
+      "Replaces: #H315312 C00385305 481010826397 INNER DOOR GLASS\nreplaces: #Q118311 INNER DOOR GLASS ALTERNATIVE FOR WHIRLPOOL\nThis article is compatible / suitable for the model: MATTRADITION MATTRADITION / IKEA",
       "https://cdn.fixpart.net/90742626/9b762bbedbc028d0ddcd2c2cc94b3000.jpg",
       ValueNotifier<int>(3),
       "10:9:1");
@@ -45,7 +45,7 @@ class Parts {
   SparePart _ovenShelf = SparePart(
       "U808059",
       "Oven Shelf 478.5 X 365 mm",
-      "Ersätter: #H314677 C00385308 481010828296 OVEN SHELF\nErsätter: #M302893 C00526696 488000526696 OVEN SHELF 478,5 X 365 MM\nDenna artikel är kompatibel / passar för modellen: MATTRADITION MATTRADITION / IKEA",
+      "Replaces: #H314677 C00385308 481010828296 OVEN SHELF\nreplaces: #M302893 C00526696 488000526696 OVEN SHELF 478,5 X 365 MM\nThis article is compatible / suitable for the model: MATTRADITION MATTRADITION / IKEA",
       "https://cdn.fixpart.net/221927674/30cc0434fd96da22124c239e7d51b862.jpg",
       ValueNotifier<int>(4),
       "10:9:1");

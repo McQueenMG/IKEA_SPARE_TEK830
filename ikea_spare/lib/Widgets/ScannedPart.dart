@@ -76,12 +76,12 @@ class _ScannedPartState extends State<ScannedPart> {
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  if (!(height < 500))
+                                  if (!(height < 640))
                                     Text(
                                       part.getId,
                                       style: const TextStyle(fontSize: 16),
                                     ),
-                                  if (height < 500 && height >= 350)
+                                  if (height < 640 && height >= 475)
                                     Row(
                                       children: [
                                         Text(
@@ -98,7 +98,7 @@ class _ScannedPartState extends State<ScannedPart> {
                                         ),
                                       ],
                                     ),
-                                  if (height < 350)
+                                  if (height < 475)
                                     Row(
                                       children: [
                                         Text(
@@ -123,7 +123,7 @@ class _ScannedPartState extends State<ScannedPart> {
                                         ),
                                       ],
                                     ),
-                                  if (height >= 350)
+                                  if (height >= 475)
                                     Row(
                                       children: [
                                         const Icon(
@@ -142,7 +142,7 @@ class _ScannedPartState extends State<ScannedPart> {
                                         ),
                                       ],
                                     ),
-                                  if (height >= 500)
+                                  if (height >= 640)
                                     Row(
                                       children: [
                                         const Icon(

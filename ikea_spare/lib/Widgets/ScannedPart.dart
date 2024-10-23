@@ -55,7 +55,7 @@ class _ScannedPartState extends State<ScannedPart> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
                               child: Image.network(
-                                part.getImageUrl,
+                                'https://corsproxy.io/?${part.getImageUrl}',
                                 fit: BoxFit.fitHeight,
                               ),
                             ),

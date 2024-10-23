@@ -34,9 +34,9 @@ class ListCard extends StatelessWidget {
               width: 90, // Fixed width for the image
               height: double.infinity, // Fixed height for the image
               child: Image.network(
-                part.getImageUrl,
-                fit: BoxFit.cover,
-              ),
+                  'https://corsproxy.io/?${part.getImageUrl}',
+                  fit: BoxFit.cover,
+                ),
             ),
             Expanded(
               child: Row(

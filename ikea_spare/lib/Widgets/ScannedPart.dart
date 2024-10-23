@@ -12,8 +12,10 @@ class ScannedPart extends StatefulWidget {
 }
 
 class _ScannedPartState extends State<ScannedPart> {
-  int? input;
+  int input = 0;
   Parts partsInstance = Parts();
+
+  final textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _ScannedPartState extends State<ScannedPart> {
                       width: width * 0.95,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey[50]!,
+                        color: Colors.white,
                       ),
                       child: Row(
                         children: [
@@ -74,42 +76,91 @@ class _ScannedPartState extends State<ScannedPart> {
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Text(
-                                    part.getId,
-                                    style: const TextStyle(fontSize: 16),
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.inventory_2,
-                                        color: Colors.black,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
-                                        child: Text(
-                                          "Quantity: ${part.getQuantity.value}",
+                                  if (!(height < 640))
+                                    Text(
+                                      part.getId,
+                                      style: const TextStyle(fontSize: 16),
+                                    ),
+                                  if (height < 640 && height >= 475)
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${part.getId}, ",
                                           style: const TextStyle(fontSize: 16),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.place_rounded,
-                                        color: Colors.black,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: height * 0.0125, bottom: height * 0.0125),
-                                        child: Text(
-                                          "Location: ${part.getLocation}",
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getLocation}",
                                           style: const TextStyle(fontSize: 16),
                                         ),
-                                      ),
-                                    ],
-                                  ),
+                                      ],
+                                    ),
+                                  if (height < 475)
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "${part.getId}, ",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                        const Icon(
+                                          Icons.inventory_2,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getQuantity.value}, ",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Text(
+                                          ":${part.getLocation}",
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                      ],
+                                    ),
+                                  if (height >= 475)
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.inventory_2,
+                                          color: Colors.black,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: height * 0.0125,
+                                              bottom: height * 0.0125),
+                                          child: Text(
+                                            "Quantity: ${part.getQuantity.value}",
+                                            style:
+                                                const TextStyle(fontSize: 16),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  if (height >= 640)
+                                    Row(
+                                      children: [
+                                        const Icon(
+                                          Icons.place_rounded,
+                                          color: Colors.black,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: height * 0.0125,
+                                              bottom: height * 0.0125),
+                                          child: Text(
+                                            "Location: ${part.getLocation}",
+                                            style:
+                                                const TextStyle(fontSize: 16),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                 ],
                               ),
                             ),
@@ -117,7 +168,7 @@ class _ScannedPartState extends State<ScannedPart> {
                         ],
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: width * 0.05)),
+                    Padding(padding: EdgeInsets.only(top: width * 0.025)),
                     SizedBox(
                       width: width * 0.9,
                       child: const Text(
@@ -131,7 +182,7 @@ class _ScannedPartState extends State<ScannedPart> {
                       height: height * 0.45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey[50]!,
+                        color: Colors.white,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(10),
@@ -146,65 +197,85 @@ class _ScannedPartState extends State<ScannedPart> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 120, height: 40),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              removeQuantity(part);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            ),
-                            child: const Text("Remove",
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black),
-                                textAlign: TextAlign.center),
+                        ElevatedButton(
+                          onPressed: () {
+                            input--;
+                            textController.text = "$input";
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: const CircleBorder(),
                           ),
+                          child: const Text("-",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center),
                         ),
-                        const SizedBox(width: 10),
                         Container(
+                          constraints: BoxConstraints(maxWidth: width * 0.2),
                           decoration: BoxDecoration(
-                            color: Colors.yellow,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints.tightFor(
-                                width: 100, height: 60),
-                            child: Center(
-                              child: TextField(
-                                textAlign: TextAlign.center,
-                                decoration: const InputDecoration(
-                                  contentPadding: EdgeInsets.only(left: 5),
-                                  labelText: 'Quantity',
-                                  labelStyle: TextStyle(
-                                      fontSize: 12, color: Colors.black),
-                                ),
-                                keyboardType: TextInputType.number,
-                                inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter.digitsOnly
-                                ],
-                                onChanged: (value) {
-                                  input = int.tryParse(value);
-                                },
+                          child: Center(
+                            child: TextField(
+                              textAlign: TextAlign.center,
+                              controller: textController,
+                              decoration: const InputDecoration(
+                                contentPadding: EdgeInsets.only(left: 5),
+                                labelText: 'Quantity',
+                                labelStyle: TextStyle(
+                                    fontSize: 12, color: Colors.black),
                               ),
+                              keyboardType: TextInputType.number,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'^-?\d*$')),
+                              ],
+                              onChanged: (value) {
+                                if (int.tryParse(value) == null) {
+                                  input = 0;
+                                  return;
+                                }
+
+                                input = int.parse(value);
+                              },
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 120, height: 40),
+                        ElevatedButton(
+                          onPressed: () {
+                            input++;
+                            textController.text = "$input";
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: const CircleBorder(),
+                          ),
+                          child: const Text("+",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center),
+                        ),
+                        Container(
+                          constraints: BoxConstraints(maxWidth: width * 0.5),
                           child: ElevatedButton(
                             onPressed: () {
-                              addQuantity(part);
+                              changeQuantity(part);
+                              textController.clear();
+                              input = 0;
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green,
+                              backgroundColor: Colors.white,
                             ),
-                            child: const Text("Add",
+                            child: const Text("Submit",
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                    fontSize: 12, color: Colors.black),
+                                    fontSize: 16, color: Colors.black),
                                 textAlign: TextAlign.center),
                           ),
                         ),
@@ -220,23 +291,10 @@ class _ScannedPartState extends State<ScannedPart> {
     );
   }
 
-  void removeQuantity(SparePart part) {
+  void changeQuantity(SparePart part) {
     setState(() {
-      if (input == null) {
-        return;
-      }
-      int tmp = part.getQuantity.value - input!;
-      part.setQuantity(tmp);
-    });
-  }
-
-  void addQuantity(SparePart part) {
-    setState(() {
-      if (input == null) {
-        return;
-      }
-      int tmp = part.getQuantity.value + input!;
-      part.setQuantity(tmp);
+      int newQuantity = part.getQuantity.value + input;
+      part.setQuantity(newQuantity);
     });
   }
 }

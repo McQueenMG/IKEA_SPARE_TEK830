@@ -8,7 +8,7 @@ class SparePartListHeader extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 65, // Fixed width for the image
+          width: 90, // Fixed width for the image
         ),
         const Expanded(
           child: Padding(
